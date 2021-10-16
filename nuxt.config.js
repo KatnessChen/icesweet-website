@@ -46,5 +46,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  generate: {
+    // https://nuxtjs.org/deployments/netlify#deploy-nuxt-on-netlify
+    fallback: true
   }
 }
