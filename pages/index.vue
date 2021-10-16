@@ -1,9 +1,20 @@
 <template>
-  <h1>Hello world!</h1>
+  <div>
+    Main Index
+    <feature-menu />
+  </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
+import FeatureMenu from '@/components/FeatureMenu'
 
-export default Vue.extend({})
+export default {
+  components: {
+    FeatureMenu
+  },
+  layout: 'WithHeaderFooter',
+  head: {
+    title: '冰山撞甜心 - 官網'
+  }
+}
 </script>

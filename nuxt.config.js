@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '03_Ice_Sweet_Official_Website',
+    title: '冰山撞甜心 - 官網',
     htmlAttrs: {
       lang: 'en'
     },
