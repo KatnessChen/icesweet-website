@@ -1,5 +1,5 @@
 <template>
-  <header class="header py-2">
+  <header class="header">
     <div class="container m-auto flex justify-between">
       <logo
         with-text
@@ -48,5 +48,7 @@ export default Vue.extend({
 .header {
   background-color: $theme-primary;
   color: $white;
+  width: 100%;
+  padding: $app-header-py;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <app-header />
+  <div class="layout">
+    <app-header class="app-header" />
     <Nuxt />
     <app-footer />
   </div>
@@ -18,3 +18,17 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import '@/assets/styles/variables.scss';
+
+.app-header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.layout {
+  padding-top: $app-header-height;
+}
+</style>

@@ -1,0 +1,27 @@
+.btn {
+  background: linear-gradient(166deg, #f22876 0%, #942dd9 100%);
+  box-shadow: 2px 3px 2px 0 rgba(220, 234, 251, 30%);
+  padding: 11px 35px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.btn-outline {
+    background: none;
+    border: 1px solid #f22876;
+    color: #f22876;
+  }
+
+  &.btn-sm {
+    padding: 4px 15px;
+  }
+}

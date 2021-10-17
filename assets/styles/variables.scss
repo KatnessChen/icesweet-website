@@ -1,4 +1,5 @@
 $theme-primary: #ff79bc;
+$theme-primary-deep: #ff4a91;
 $theme-secondary: #942dd9;
 
 $white: #fff;
@@ -8,3 +9,7 @@ $gray-300: #5e5e5e;
 $gray-500: #999;
 $gray-700: #c9c9c9;
 $gray-900: #d9d9d9;
+
+$app-header-logo-height: 60px;
+$app-header-py: 4px;
+$app-header-height: $app-header-logo-height + $app-header-py * 2;

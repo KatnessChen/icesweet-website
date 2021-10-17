@@ -20,10 +20,10 @@ export default {
     return {
       features: [
         { routeName: `${parentRoute}-choice`, label: '貴妃嚴選', icon: 'choice' },
-        { routeName: `${parentRoute}-fansonly`, label: '粉絲見面會', icon: 'fansonly' },
+        { routeName: `${parentRoute}-fans-only`, label: '粉絲見面會', icon: 'fans-only' },
         { routeName: `${parentRoute}-activities`, label: '創新活動', icon: 'activities' },
-        { routeName: `${parentRoute}-lotsof`, label: '海量貴妃', icon: 'lotsof' },
-        { routeName: `${parentRoute}-satisification`, label: '市場滿意度', icon: 'satisification' }
+        { routeName: `${parentRoute}-people`, label: '海量貴妃', icon: 'people' },
+        { routeName: `${parentRoute}-like`, label: '市場滿意度', icon: 'like' }
       ]
     }
   }
