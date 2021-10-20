@@ -1,20 +1,7 @@
 <template>
   <div>
     <!-- 大圖 -->
-    <section class="section-hero">
-      <div class="action flex flex-col">
-        <div class="action-text">
-          找到百分百戀人
-        </div>
-        <div class="btn action-btn">
-          免費登入
-        </div>
-      </div>
-      <div
-        class="banner-img"
-        :style="{ 'background-image': 'url(' + require('@/static/image/banner.png') + ')' }"
-      />
-    </section>
+    <section-hero />
     <!-- 輪播大圖 -->
     <section class="section-slides">
       <my-swiper :banner-paths="banners" />
@@ -62,6 +49,7 @@
 <script>
 import { mapState } from 'vuex'
 import MySwiper from '@/components/MySwiper'
+import SectionHero from '~/components/home/SectionHero'
 import SectionSlogan from '~/components/home/SectionSlogan'
 import SectionFeatureMenu from '@/components/home/SectionFeatureMenu'
 
@@ -69,6 +57,7 @@ export default {
   name: 'Index',
   components: {
     MySwiper,
+    SectionHero,
     SectionFeatureMenu,
     SectionSlogan
   },
@@ -101,40 +90,6 @@ export default {
 @import '@/assets/styles/variables.scss';
 
 .section {
-  &-hero {
-    position: relative;
-
-    .action {
-      position: absolute;
-      top: 50%;
-      left: 25%;
-      transform: translate(-50%, -50%);
-
-      &-text {
-        font-size: 34px;
-        color: #5e5e5e;
-        margin-bottom: 40px;
-        position: relative;
-
-        &::after {
-          content: '';
-          position: absolute;
-          top: 110%;
-          left: 50%;
-          transform: translateX(-50%);
-          background-color: $theme-primary-deep;
-          width: 60px;
-          height: 2px;
-        }
-      }
-
-      &-btn {
-        padding: 20px 0;
-      }
-    }
-  }
-
-  &-hero,
   &-slides {
     .banner-img,
     .swiper-container {
