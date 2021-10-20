@@ -76,10 +76,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import FeatureMenu from '@/components/FeatureMenu'
 import MySwiper from '@/components/MySwiper'
 
 export default {
+  name: 'Index',
   components: {
     FeatureMenu,
     MySwiper
@@ -101,6 +103,15 @@ export default {
   },
   head: {
     title: '冰山撞甜心 - 官網'
+  },
+  computed: {
+    ...mapState(['deviceWidth'])
+  },
+  mounted () {
+    this.$store.commit('setDeviceWidth')
+    window.addEventListener('resize', () => {
+      this.$store.commit('setDeviceWidth')
+    })
   }
 }
 </script>

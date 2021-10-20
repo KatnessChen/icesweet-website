@@ -1,18 +1,44 @@
 <template>
   <header class="header">
-    <div class="container m-auto flex justify-between">
+    <div class="container m-auto px-4 flex justify-between items-center">
       <logo
         with-text
         :logo-image-height="60"
         class="cursor-pointer"
         @click.native="$router.push('/')"
       />
-      <ul class="flex items-center">
+      <!-- mobile -->
+      <template v-if="isMobile">
+        <ul
+          class="mobile-menu"
+          :class="{ 'is-active': isShowMobileMenu }"
+        >
+          <div class="container m-auto px-4">
+            <nuxt-link
+              v-for="link of navItems"
+              :key="link.routeName"
+              :to="{ name: link.routeName }"
+              class="link"
+            >
+              {{ link.label }}
+            </nuxt-link>
+          </div>
+        </ul>
+        <app-ham
+          :is-active="isShowMobileMenu"
+          @click.native="isShowMobileMenu = !isShowMobileMenu"
+        />
+      </template>
+      <!-- desktop -->
+      <ul
+        v-else
+        class="flex items-center"
+      >
         <nuxt-link
           v-for="link of navItems"
           :key="link.routeName"
           :to="{ name: link.routeName }"
-          class="ml-2"
+          class="ml-6"
         >
           {{ link.label }}
         </nuxt-link>
@@ -23,6 +49,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapGetters } from 'vuex'
 import Logo from './Logo.vue'
 
 export default Vue.extend({
@@ -31,7 +58,13 @@ export default Vue.extend({
   },
   data () {
     return {
-      navItems: [
+      isShowMobileMenu: true
+    }
+  },
+  computed: {
+    ...mapGetters(['isMobile']),
+    navItems () {
+      return [
         { routeName: 'term', label: '服務條款' },
         { routeName: 'faq', label: '常見問題' },
         { routeName: 'about', label: '關於我們' },
@@ -45,10 +78,52 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '@/assets/styles/variables.scss';
 
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
 .header {
   background-color: $theme-primary;
   color: $white;
   width: 100%;
   padding: $app-header-py;
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    top: $app-header-height;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    background-color: $theme-primary;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &.is-active {
+      animation-name: fadeInLeft;
+      animation-duration: 1s;
+      display: block;
+    }
+
+    .link {
+      cursor: pointer;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
 }
 </style>
