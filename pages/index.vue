@@ -22,7 +22,7 @@
     <!-- 社群連結 -->
     <!-- TODO -->
     <!-- 特色菜單 -->
-    <feature-menu />
+    <section-feature-menu />
     <!-- 平台操作介面 -->
     <section class="section-steps">
       <h2 class="title text-center">
@@ -55,45 +55,26 @@
       />
     </section>
     <!-- 統計數字 -->
-    <section class="section-slogans flex justify-center">
-      <div
-        v-for="(slogan, index) in slogans"
-        :key="index"
-        class="slogan flex flex-col"
-      >
-        <p class="statistics">
-          {{ slogan.statistics }}
-        </p>
-        <p class="description">
-          {{ slogan.description }}
-        </p>
-        <p class="subtitle">
-          {{ slogan.subtitle }}
-        </p>
-      </div>
-    </section>
+    <section-slogan />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import FeatureMenu from '@/components/FeatureMenu'
 import MySwiper from '@/components/MySwiper'
+import SectionSlogan from '~/components/home/SectionSlogan'
+import SectionFeatureMenu from '@/components/home/SectionFeatureMenu'
 
 export default {
   name: 'Index',
   components: {
-    FeatureMenu,
-    MySwiper
+    MySwiper,
+    SectionFeatureMenu,
+    SectionSlogan
   },
   layout: 'WithHeaderFooter',
   data () {
     return {
-      slogans: [
-        { statistics: '85%', description: '25 歲以上使用者', subtitle: '20~30 歲註冊人數愈來愈多' },
-        { statistics: '3,500,000', description: '註冊會員', subtitle: '全球使用 SweetRing 人數不斷提升' },
-        { statistics: '80%', description: '25 歲以上使用者', subtitle: '尋找認真交往的對象' }
-      ],
       banners: [
         '@/static/image/banner.png',
         '@/static/image/banner.png',
@@ -187,38 +168,6 @@ export default {
     .video {
       width: 100%;
       height: 100%;
-    }
-  }
-
-  &-slogans {
-    .slogan {
-      line-height: 1.6;
-      text-align: center;
-      margin: 80px 0;
-
-      &:not(:last-child) {
-        margin-right: 5vw;
-      }
-
-      .statistics {
-        line-height: 1.6;
-        font-size: 50px;
-        color: $theme-primary-deep;
-        font-weight: 600;
-      }
-
-      .description {
-        line-height: 2;
-        font-size: 24px;
-        color: #5e5e5e;
-      }
-
-      .subtitle {
-        line-height: 2;
-        font-size: 20px;
-        color: #5e5e5e;
-        font-weight: 300;
-      }
     }
   }
 }
