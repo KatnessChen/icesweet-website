@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <ul class="flex justify-center py-10 gap-10 flex-wrap">
+    <ul class="flex justify-center py-10 px-3 gap-10 flex-wrap">
       <nuxt-link
         v-for="feature in features"
         :key="feature.routeName"

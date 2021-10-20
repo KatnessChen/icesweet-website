@@ -11,23 +11,7 @@
     <!-- 特色菜單 -->
     <section-feature-menu />
     <!-- 平台操作介面 -->
-    <section class="section-steps">
-      <h2 class="title text-center">
-        簡單的 3 個使用步驟
-      </h2>
-      <div class="flex justify-center">
-        <div
-          v-for="img in 3"
-          :key="img"
-          class="step"
-        >
-          <img
-            class="img"
-            src="@/static/image/mobile.png"
-          >
-        </div>
-      </div>
-    </section>
+    <section-interface-intro />
     <!-- 影音區 -->
     <section class="section-video">
       <iframe
@@ -50,8 +34,9 @@
 import { mapState } from 'vuex'
 import MySwiper from '@/components/MySwiper'
 import SectionHero from '~/components/home/SectionHero'
-import SectionSlogan from '~/components/home/SectionSlogan'
 import SectionFeatureMenu from '@/components/home/SectionFeatureMenu'
+import SectionInterfaceIntro from '@/components/home/SectionInterfaceIntro'
+import SectionSlogan from '~/components/home/SectionSlogan'
 
 export default {
   name: 'Index',
@@ -59,6 +44,7 @@ export default {
     MySwiper,
     SectionHero,
     SectionFeatureMenu,
+    SectionInterfaceIntro,
     SectionSlogan
   },
   layout: 'WithHeaderFooter',
@@ -100,20 +86,6 @@ export default {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
-    }
-  }
-
-  &-steps {
-    margin: 60px 0;
-
-    .title {
-      font-size: 34px;
-      color: #5e5e5e;
-      margin-bottom: 32px;
-    }
-
-    .img {
-      max-width: 25vw;
     }
   }
 
