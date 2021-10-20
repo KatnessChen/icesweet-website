@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="container m-auto px-4 flex justify-between items-center">
+    <div class="px-4 flex justify-between items-center">
       <logo
         with-text
         :logo-image-height="60"
@@ -8,21 +8,19 @@
         @click.native="$router.push('/')"
       />
       <!-- mobile -->
-      <template v-if="isMobile">
+      <template v-if="isTabletOrBelow">
         <ul
-          class="mobile-menu"
+          class="mobile-menu px-4"
           :class="{ 'is-active': isShowMobileMenu }"
         >
-          <div class="container m-auto px-4">
-            <nuxt-link
-              v-for="link of navItems"
-              :key="link.routeName"
-              :to="{ name: link.routeName }"
-              class="link"
-            >
-              {{ link.label }}
-            </nuxt-link>
-          </div>
+          <nuxt-link
+            v-for="link of navItems"
+            :key="link.routeName"
+            :to="{ name: link.routeName }"
+            class="link"
+          >
+            {{ link.label }}
+          </nuxt-link>
         </ul>
         <app-ham
           :is-active="isShowMobileMenu"
@@ -58,11 +56,11 @@ export default Vue.extend({
   },
   data () {
     return {
-      isShowMobileMenu: true
+      isShowMobileMenu: false
     }
   },
   computed: {
-    ...mapGetters(['isMobile']),
+    ...mapGetters(['isTabletOrBelow']),
     navItems () {
       return [
         { routeName: 'term', label: '服務條款' },
