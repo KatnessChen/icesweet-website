@@ -1,0 +1,5 @@
+@import './variables.scss';
+
+.page-min-height {
+  min-height: calc(100vh - #{$app-header-height + $app-footer-height});
+}

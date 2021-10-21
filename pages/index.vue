@@ -19,13 +19,13 @@
 
 <script>
 import { mapState } from 'vuex'
-import SectionHero from '~/components/home/SectionHero'
-import SectionSwiper from '~/components/home/SectionSwiper'
-import SectionMediaLinks from '~/components/home/SectionMediaLinks'
+import SectionHero from '@/components/home/SectionHero'
+import SectionSwiper from '@/components/home/SectionSwiper'
+import SectionMediaLinks from '@/components/home/SectionMediaLinks'
 import SectionFeatureMenu from '@/components/home/SectionFeatureMenu'
 import SectionInterfaceIntro from '@/components/home/SectionInterfaceIntro'
-import SectionSlogan from '~/components/home/SectionSlogan'
-import SectionVideo from '~/components/home/SectionVideo'
+import SectionSlogan from '@/components/home/SectionSlogan'
+import SectionVideo from '@/components/home/SectionVideo'
 
 export default {
   name: 'Index',

@@ -1,0 +1,53 @@
+
+@import './variables.scss';
+
+.component-article {
+  padding: 60px;
+  color: #5e5e5e;
+
+  .title {
+    font-size: 34px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+
+  .title-second {
+    font-size: 22px;
+    color: $theme-primary-deep;
+    margin-bottom: 16px;
+  }
+
+  .ordered-list {
+    list-style: none;
+    padding-left: 20px;
+    font-weight: 400;
+  }
+
+  .paragraph {
+    font-weight: 400;
+
+    .paragraph {
+      padding: 0 20px;
+      margin-top: 20px;
+    }
+
+    & + .paragraph,
+    & + .ordered-list {
+      margin-top: 20px;
+    }
+
+    & + .title-second {
+      margin-top: 32px;
+    }
+  }
+
+  .ordered-list + .paragraph,
+  .ordered-list + .ordered-list {
+    margin-top: 20px;
+  }
+
+  .ordered-list + .title-second {
+    margin-top: 32px;
+  }
+}

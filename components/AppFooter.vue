@@ -22,7 +22,7 @@ export default {
 .footer {
   background-color: $theme-primary;
   font-size: 14px;
-  height: 70px;
+  height: $app-footer-height;
   color: $white;
 }
 </style>

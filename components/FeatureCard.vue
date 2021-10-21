@@ -1,7 +1,16 @@
 <template>
-  <div class="card">
-    <h2>{{ title }}</h2>
-    <div v-html="text" />
+  <div class="card component-article">
+    <img
+      v-if="icon"
+      :src="require(`/static/svg/${icon}.svg`)"
+      class="card__icon m-auto mb-4 w-8"
+    >
+    <h2 class="title">
+      {{ title }}
+    </h2>
+    <div>
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -13,10 +22,9 @@ export default {
       default: '',
       required: true
     },
-    text: {
+    icon: {
       type: String,
-      default: '這是一串很長很長的話',
-      required: true
+      default: ''
     }
   }
 }
@@ -24,8 +32,14 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  background-color: #fff;
   padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px 0 #e5e5e5;
+  background-color: #fff;
+
+  &__icon {
+    width: 80px;
+  }
 }
 
 </style>

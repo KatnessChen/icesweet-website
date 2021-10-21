@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ham md:hidden"
+    class="ham"
     :class="{ 'is-active': isActive }"
   >
     <span />

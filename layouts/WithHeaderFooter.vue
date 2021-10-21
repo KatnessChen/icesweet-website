@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <app-header class="app-header" />
-    <Nuxt />
+    <Nuxt class="page-min-height" />
     <app-footer />
   </div>
 </template>
