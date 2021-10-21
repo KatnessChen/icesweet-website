@@ -52,6 +52,10 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/styles/variables.scss';
 
+.swiper {
+  height: 100%;
+}
+
 .banner-img {
   height: 100%;
   background-size: cover;

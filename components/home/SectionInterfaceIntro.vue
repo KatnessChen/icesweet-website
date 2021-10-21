@@ -20,8 +20,8 @@
         v-for="(intro, index) in intros"
         :key="index"
         class="interface text-center"
-        :class="{ 'is-active': index === activeStepIndex }"
-        :style="{...styleInfo}"
+        :class="{ 'is-active': index === activeStepIndex || isDesktop }"
+        :style="{ 'flex': `0 0 ${imageSize}%` }"
       >
         <div class="intro-text flex flex-col justify-center m-auto mb-12">
           <span class="step">STEP {{ index + 1 }}</span>
@@ -53,9 +53,9 @@ export default {
     translate () {
       switch (this.activeStepIndex) {
         case 0:
-          return '45%'
+          return `${this.imageSize}%`
         case 2:
-          return '-45%'
+          return `-${this.imageSize}%`
         case 1:
         default:
           return 0
@@ -68,35 +68,33 @@ export default {
         { title: '聊天畫面', subTitle: '一對一聊天', imageFile: 'mobile.png' }
       ]
     },
-    styleInfo () {
-      if (this.isMobile) {
-        return {
-          flex: '0 0 300px'
-        }
-      }
-      if (this.isTablet) {
-        return {
-          flex: '0 0 400px'
-        }
-      }
-      return {
-        flex: '0 0 500px'
-      }
+    imageSize () {
+      if (this.isMobile) { return 60 }
+      if (this.isTablet) { return 45 }
+      return 30
     }
   },
+  mounted () {
+    window.addEventListener('resize', () => {
+      this.activeStepIndex = 1
+    })
+  },
   methods: {
-    onTouchstart (e) {
-      console.log(e)
+    onTouchstart ({ changedTouches }) {
+      this.moveStart = changedTouches[0].clientX
     },
-    onTouchend (e) {
-      console.log(e)
+    onTouchend ({ changedTouches }) {
+      this.slideHandler(changedTouches[0].clientX)
     },
     onMouseDown ({ clientX }) {
-      // console.log(clientX)
       this.moveStart = clientX
     },
     onMouseUp ({ clientX: moveEnd }) {
-      // console.log(clientX)
+      this.slideHandler(moveEnd)
+    },
+    slideHandler (moveEnd) {
+      if (this.isDesktop) { return }
+
       // 往前一張圖
       if (moveEnd > this.moveStart) {
         if (this.activeStepIndex <= 0) {
@@ -132,7 +130,7 @@ export default {
 
   .interface {
     opacity: 0.4;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.15s ease;
 
     &.is-active {
       opacity: 1;

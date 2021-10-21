@@ -1,30 +1,17 @@
 <template>
-  <div>
+  <div class="home-page">
     <!-- 大圖 -->
     <section-hero />
     <!-- 輪播大圖 -->
-    <section class="section-slides">
-      <my-swiper :banner-paths="banners" />
-    </section>
+    <section-swiper />
     <!-- 社群連結 -->
-    <!-- TODO -->
+    <section-media-links />
     <!-- 特色菜單 -->
     <section-feature-menu />
     <!-- 平台操作介面 -->
     <section-interface-intro />
     <!-- 影音區 -->
-    <section class="section-video">
-      <iframe
-        class="video"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/DWcJFNfaw9c"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      />
-    </section>
+    <section-video />
     <!-- 統計數字 -->
     <section-slogan />
   </div>
@@ -32,31 +19,26 @@
 
 <script>
 import { mapState } from 'vuex'
-import MySwiper from '@/components/MySwiper'
 import SectionHero from '~/components/home/SectionHero'
+import SectionSwiper from '~/components/home/SectionSwiper'
+import SectionMediaLinks from '~/components/home/SectionMediaLinks'
 import SectionFeatureMenu from '@/components/home/SectionFeatureMenu'
 import SectionInterfaceIntro from '@/components/home/SectionInterfaceIntro'
 import SectionSlogan from '~/components/home/SectionSlogan'
+import SectionVideo from '~/components/home/SectionVideo'
 
 export default {
   name: 'Index',
   components: {
-    MySwiper,
     SectionHero,
+    SectionSwiper,
+    SectionMediaLinks,
     SectionFeatureMenu,
     SectionInterfaceIntro,
-    SectionSlogan
+    SectionSlogan,
+    SectionVideo
   },
   layout: 'WithHeaderFooter',
-  data () {
-    return {
-      banners: [
-        '@/static/image/banner.png',
-        '@/static/image/banner.png',
-        '@/static/image/banner.png'
-      ]
-    }
-  },
   head: {
     title: '冰山撞甜心 - 官網'
   },
@@ -75,27 +57,8 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/styles/variables.scss';
 
-.section {
-  &-slides {
-    .banner-img,
-    .swiper-container {
-      height: 60vh;
-    }
-
-    .banner-img {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-  }
-
-  &-video {
-    height: 60vh;
-
-    .video {
-      width: 100%;
-      height: 100%;
-    }
-  }
+.home-page {
+  width: 100vw;
+  overflow: hidden;
 }
 </style>

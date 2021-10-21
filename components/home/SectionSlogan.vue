@@ -5,13 +5,22 @@
       :key="index"
       class="slogan flex flex-col my-6 lg:mx-10"
     >
-      <p class="statistics">
+      <p
+        class="statistics"
+        :style="{ 'font-size': isTabletOrAbove ? '50px' : '9vmin' }"
+      >
         {{ slogan.statistics }}
       </p>
-      <p class="description">
+      <p
+        class="description"
+        :style="{ 'font-size': isTabletOrAbove ? '24px' : '5vmin' }"
+      >
         {{ slogan.description }}
       </p>
-      <p class="subtitle">
+      <p
+        class="subtitle"
+        :style="{ 'font-size': isTabletOrAbove ? '20px' : '4vmin' }"
+      >
         {{ slogan.subtitle }}
       </p>
     </div>
@@ -24,7 +33,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'SectionSlogan',
   computed: {
-    ...mapGetters(['isMobile']),
+    ...mapGetters(['isTabletOrAbove']),
     slogans () {
       return [
         { statistics: '85%', description: '25 歲以上使用者', subtitle: '20~30 歲註冊人數愈來愈多' },
@@ -45,20 +54,18 @@ export default {
 
   .statistics {
     line-height: 1.6;
-    font-size: 50px;
     color: $theme-primary-deep;
     font-weight: 600;
   }
 
   .description {
     line-height: 2;
-    font-size: 24px;
     color: #5e5e5e;
+    font-weight: 600;
   }
 
   .subtitle {
     line-height: 2;
-    font-size: 20px;
     color: #5e5e5e;
     font-weight: 300;
   }

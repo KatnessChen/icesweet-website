@@ -11,7 +11,7 @@ export default {
   isTabletOrBelow (state) {
     return state.deviceWidth < state.breakpoint.lg
   },
-  isDesktop () {
+  isDesktop (state) {
     return state.deviceWidth >= state.breakpoint.lg
   }
 }

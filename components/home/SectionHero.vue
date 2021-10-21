@@ -2,11 +2,11 @@
   <section class="section-hero">
     <div
       class="action flex flex-col"
-      :style="{...styleInfo.actionBoxPosition}"
+      :style="styleInfo.actionBoxPosition"
     >
       <div
         class="action-text whitespace-nowrap"
-        :style="{...styleInfo.actionText}"
+        :style="styleInfo.actionText"
       >
         找到百分百戀人
       </div>
@@ -25,14 +25,14 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'SectionHero',
   computed: {
-    ...mapState(['deviceWidth']),
+    ...mapGetters(['isMobile']),
     styleInfo () {
-      return this.deviceWidth < 441
+      return this.isMobile
         ? {
             height: '100vh',
             bannerFile: 'banner-sm',

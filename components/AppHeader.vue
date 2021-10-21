@@ -5,7 +5,7 @@
         with-text
         :logo-image-height="60"
         class="cursor-pointer"
-        @click.native="$router.push('/')"
+        @click.native="onClickLogo"
       />
       <!-- mobile -->
       <template v-if="isTabletOrBelow">
@@ -18,6 +18,7 @@
             :key="link.routeName"
             :to="{ name: link.routeName }"
             class="link"
+            @click.native="isShowMobileMenu = false"
           >
             {{ link.label }}
           </nuxt-link>
@@ -68,6 +69,14 @@ export default Vue.extend({
         { routeName: 'about', label: '關於我們' },
         { routeName: 'join', label: '我要當貴妃' }
       ]
+    }
+  },
+  methods: {
+    onClickLogo () {
+      this.$router.push('/')
+      if (this.isTabletOrBelow && this.isShowMobileMenu) {
+        this.isShowMobileMenu = false
+      }
     }
   }
 })
