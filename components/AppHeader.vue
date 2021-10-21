@@ -65,6 +65,7 @@ export default Vue.extend({
     navItems () {
       return [
         { routeName: 'term', label: '服務條款' },
+        { routeName: 'policy', label: '隱私權政策' },
         { routeName: 'faq', label: '常見問題' },
         { routeName: 'about', label: '關於我們' },
         { routeName: 'join', label: '我要當貴妃' }

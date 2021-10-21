@@ -2,7 +2,7 @@
   <div class="container m-auto">
     <div class="component-article">
       <div class="title">
-        服務條款
+        平台使用規範
       </div>
       <div class="paragraph">
         親愛的會員們大家好，歡迎來到最優質的聊天平台，為維持平台的優質環境，以下我們訂定了使用平台規範，所有會員加入平台前都應詳閱平台規範後使用平台。冰山撞甜心聊天平台以下稱「本站」
@@ -10,7 +10,7 @@
       <div class="paragraph">
         若有違反本站所訂定之使用規範或是以下任一內容時，本站得暫停或是終止您使用本站之權利與服務，以利維持平台穩健與其會員之權利，敬請所有會員配合與遵守，本站在此感謝所有會員。
       </div>
-      <div class="title-second">
+      <div class="paragraph">
         名詞定義
       </div>
       <div class="paragraph">
