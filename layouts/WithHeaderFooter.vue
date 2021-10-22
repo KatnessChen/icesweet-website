@@ -15,6 +15,12 @@ export default {
   components: {
     AppHeader,
     AppFooter
+  },
+  mounted () {
+    this.$store.commit('setDeviceWidth')
+    window.addEventListener('resize', () => {
+      this.$store.commit('setDeviceWidth')
+    })
   }
 }
 </script>

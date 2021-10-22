@@ -44,12 +44,6 @@ export default {
   },
   computed: {
     ...mapState(['deviceWidth'])
-  },
-  mounted () {
-    this.$store.commit('setDeviceWidth')
-    window.addEventListener('resize', () => {
-      this.$store.commit('setDeviceWidth')
-    })
   }
 }
 </script>
