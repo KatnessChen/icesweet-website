@@ -3,9 +3,12 @@
     class="collapse"
     :class="{ 'is-collapsed': isCollapsed }"
   >
-    <div class="collapse__header">
+    <div
+      class="collapse__header"
+      @click="isCollapsed = !isCollapsed"
+    >
       <span class="collapse__header-title">{{ title }}</span>
-      <span class="control" @click="isCollapsed = !isCollapsed">
+      <span class="control">
         <img :src="require('/static/image/chevron.png')" alt="">
       </span>
     </div>
@@ -44,6 +47,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 
     &-title {
       font-size: 22px;
@@ -51,7 +55,6 @@ export default {
     }
 
     .control {
-      cursor: pointer;
       transition: all 0.2s ease;
       width: 24px;
     }
