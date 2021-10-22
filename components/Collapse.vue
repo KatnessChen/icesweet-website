@@ -45,18 +45,21 @@ export default {
 .collapse {
   &__header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     cursor: pointer;
 
     &-title {
       font-size: 22px;
       color: $theme-primary-deep;
+      transition: color 0.3s ease;
     }
 
     .control {
       transition: all 0.2s ease;
-      width: 24px;
+      flex: 0 0 24px;
+      margin-left: 12px;
+      margin-top: 8px;
     }
   }
 
@@ -70,6 +73,10 @@ export default {
   &.is-collapsed {
     .control {
       transform: rotate(180deg);
+    }
+
+    .collapse__header-title {
+      color: #5e5e5e;
     }
 
     .collapse__body {
