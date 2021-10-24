@@ -9,7 +9,9 @@
       :key="index"
     >
       <div
-        :style="{ 'background-image': `url(${require('@/static/image/banner.png')})` }"
+        :style="{
+          'background-image': 'url(' + require(`@/static/image/swiper/${bannerPath}`) + ')'
+        }"
         class="banner-img"
       />
     </swiper-slide>

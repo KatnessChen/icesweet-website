@@ -9,11 +9,21 @@
     <div class="paragraph">
       總之，我們一定會努力滿足您想要一親芳澤的心願。活動細節及辦法，不久的將來，我們將會公佈在粉絲專頁及官方LINE，敬請期待喔~
     </div>
+    <img :src="require('/static/image/fans-only/fans-only-1.png')" class="mt-7">
+    <div
+      class="sub-img-container"
+      :class="[isDesktop && 'is-desktop']"
+    >
+      <img :src="require('/static/image/fans-only/fans-only-2.png')" class="sub-img">
+      <img :src="require('/static/image/fans-only/fans-only-3.png')" class="sub-img">
+      <img :src="require('/static/image/fans-only/fans-only-4.png')" class="sub-img">
+    </div>
   </feature-page>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapGetters } from 'vuex'
 import FeaturePage from '@/components/FeaturePage.vue'
 
 export default Vue.extend({
@@ -23,6 +33,30 @@ export default Vue.extend({
   layout: 'WithHeaderFooter',
   head: {
     title: '粉絲見面會'
+  },
+  computed: {
+    ...mapGetters(['isDesktop'])
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.sub-img-container {
+  display: flex;
+  flex-direction: column;
+
+  .sub-img {
+    margin-top: 10px;
+  }
+
+  &.is-desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+
+    .sub-img {
+      min-width: 0;
+    }
+  }
+}
+</style>

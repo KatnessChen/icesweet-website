@@ -1,5 +1,8 @@
 <template>
-  <div class="page">
+  <div
+    class="container m-auto"
+    :style="{ padding: isTabletOrAbove ? '40px' : '20px' }"
+  >
     <back
       v-if="isTabletOrAbove"
       class="mb-2"
@@ -50,9 +53,3 @@ export default Vue.extend({
   }
 })
 </script>
-
-<style lang="scss" scoped>
-.page {
-  padding: 40px;
-}
-</style>

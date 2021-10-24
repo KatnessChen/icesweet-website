@@ -19,16 +19,22 @@ export default {
   computed: {
     ...mapGetters(['isMobile']),
     banners () {
-      return [
-        '@/static/image/banner.png',
-        '@/static/image/banner.png',
-        '@/static/image/banner.png'
-      ]
+      return this.isMobile
+        ? [
+            'image-sm-1.png',
+            'image-sm-2.png',
+            'image-sm-3.png'
+          ]
+        : [
+            'image-1.png',
+            'image-2.png',
+            'image-3.png'
+          ]
     },
     styleInfo () {
       return this.isMobile
         ? { height: '100vh' }
-        : { height: '60vh' }
+        : { height: '65vh' }
     }
   }
 }

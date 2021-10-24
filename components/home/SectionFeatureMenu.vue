@@ -1,6 +1,11 @@
 <template>
   <div class="section">
-    <ul class="flex justify-center py-10 px-3 gap-10 flex-wrap">
+    <ul
+      class="container m-auto flex py-10 px-3 gap-6 flex-wrap"
+      :style="{
+        'justify-content': isDesktop ? 'space-between' : 'center'
+      }"
+    >
       <nuxt-link
         v-for="feature in features"
         :key="feature.routeName"
@@ -11,13 +16,17 @@
           :src="require(`/static/svg/${feature.icon}.svg`)"
           class="feature-icon"
         >
-        <span class="mt-4 whitespace-nowrap">{{ feature.label }}</span>
+        <span class="mt-1 whitespace-nowrap flex">
+          {{ feature.label }}
+          <img v-if="isTabletOrAbove" :src="require('/static/image/chevron-pink.svg')" class="ml-1">
+        </span>
       </nuxt-link>
     </ul>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 const parentRoute = 'features'
 
 export default {
@@ -25,6 +34,7 @@ export default {
   components: {
   },
   computed: {
+    ...mapGetters(['isDesktop', 'isTabletOrAbove']),
     features () {
       return [
         { routeName: `${parentRoute}-choice`, label: '貴妃嚴選', icon: 'choice' },
@@ -46,13 +56,16 @@ export default {
 
   .menu-item {
     flex-basis: 24%;
-    min-width: 60px;
-    max-width: 80px;
+    min-width: 90px;
+    max-width: 125px;
+    border-radius: 18px;
+    background-color: #fff;
+    box-shadow: 1px 1px 3px $gray-700;
+    padding: 14px;
 
     .feature-icon {
       background-color: #fff;
       border-radius: 50%;
-      box-shadow: 1px 1px 3px $gray-700;
       width: 100%;
     }
   }

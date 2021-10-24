@@ -1,6 +1,7 @@
 <template>
   <section
     class="section-interface-intro"
+    :class="{ 'is-mobile': isMobile }"
     @touchstart="onTouchstart"
     @touchend="onTouchend"
     @mousedown="onMouseDown"
@@ -30,7 +31,7 @@
         </div>
         <img
           class="intro-img"
-          :src="require(`@/static/image/${intro.imageFile}`)"
+          :src="require(`@/static/image/intro/${intro.imageFile}`)"
         >
       </div>
     </div>
@@ -63,9 +64,9 @@ export default {
     },
     intros () {
       return [
-        { title: '貴妃大廳', subTitle: '真實在線', imageFile: 'mobile.png' },
-        { title: '貴妃簡介', subTitle: '一點即聊', imageFile: 'mobile.png' },
-        { title: '聊天畫面', subTitle: '一對一聊天', imageFile: 'mobile.png' }
+        { title: '貴妃大廳', subTitle: '真實在線', imageFile: 'intro-1.png' },
+        { title: '貴妃簡介', subTitle: '一點即聊', imageFile: 'intro-2.png' },
+        { title: '聊天畫面', subTitle: '一對一聊天', imageFile: 'intro-3.png' }
       ]
     },
     imageSize () {
@@ -120,20 +121,26 @@ export default {
 @import '@/assets/styles/variables.scss';
 
 .section-interface-intro {
-  margin: 60px 0;
+  margin: 60px 0 32px 0;
 
   .section-title {
     font-size: 34px;
     color: #5e5e5e;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
 
   .interface {
     opacity: 0.4;
-    transition: opacity 0.15s ease;
+    transition: all 0.15s ease;
 
     &.is-active {
       opacity: 1;
+    }
+  }
+
+  &.is-mobile {
+    .is-active {
+      transform: translateY(-24px);
     }
   }
 

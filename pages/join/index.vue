@@ -1,15 +1,18 @@
 <template>
-  <div class="container m-auto">
+  <div
+    class="container m-auto"
+    :class="{ 'is-desktop': isDesktop }"
+  >
     <div class="component-article text-center">
       <div class="title">
         我要當貴妃
       </div>
       <div class="flex flex-col lg:flex-row items-start">
         <img
-          :src="require('/static/image/banner-sm.png')"
-          class="img half mb-10 lg:mb-0 lg:mr-10"
+          :src="require('/static/image/join/join.png')"
+          class="img col-left mb-10 lg:mb-0 lg:mr-10"
         >
-        <div class="half">
+        <div class="col-right">
           <div class="paragraph">
             交朋友，是我們的日常
           </div>
@@ -48,20 +51,39 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapGetters } from 'vuex'
 
 export default Vue.extend({
   layout: 'WithHeaderFooter',
   head: {
     title: '成為貴妃'
+  },
+  computed: {
+    ...mapGetters(['isDesktop'])
   }
 })
 </script>
 
 <style lang="scss" scoped>
 
-.half {
-  flex: 0 0 50%;
+.col-left {
+  flex: 0 0 56%;
   min-width: 0;
+}
+
+.col-right {
+  flex: 0 0 46%;
+  min-width: 0;
+}
+
+.is-desktop {
+  .paragraph {
+    text-align: left;
+
+    &:not(:first-child) {
+      margin-top: 6px;
+    }
+  }
 }
 
 .img {

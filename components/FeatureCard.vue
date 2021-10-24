@@ -1,5 +1,8 @@
 <template>
-  <div class="card component-article">
+  <div
+    class="card component-article"
+    :style="{ padding: isTabletOrAbove ? '40px' : '20px' }"
+  >
     <img
       v-if="icon"
       :src="require(`/static/svg/${icon}.svg`)"
@@ -15,6 +18,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   props: {
     title: {
@@ -26,6 +31,9 @@ export default {
       type: String,
       default: ''
     }
+  },
+  computed: {
+    ...mapGetters(['isTabletOrAbove'])
   }
 }
 </script>
