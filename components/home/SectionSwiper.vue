@@ -16,6 +16,14 @@ export default {
   components: {
     MySwiper
   },
+  head: {
+    link: [
+      {
+        rel: 'stylesheet',
+        href: '/assets/styles/swiper.css'
+      }
+    ]
+  },
   computed: {
     ...mapGetters(['isMobile']),
     banners () {
@@ -33,8 +41,8 @@ export default {
     },
     styleInfo () {
       return this.isMobile
-        ? { height: '100vh' }
-        : { height: '65vh' }
+        ? { height: '115vw' }
+        : { height: '34.73vw' }
     }
   }
 }

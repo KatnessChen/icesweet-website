@@ -1,0 +1,5 @@
+@import './variables.scss';
+
+.swiper-pagination-bullet-active {
+  background-color: $theme-primary-deep !important;
+}
