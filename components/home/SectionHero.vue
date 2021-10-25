@@ -108,10 +108,6 @@ export default {
         height: 2px;
       }
     }
-
-    &-btn {
-      padding: 8px 40px;
-    }
   }
 }
 </style>

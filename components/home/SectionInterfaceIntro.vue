@@ -35,6 +35,17 @@
         >
       </div>
     </div>
+    <div
+      v-if="isMobile"
+      class="w-full text-center"
+    >
+      <div
+        v-for="dot in intros.length"
+        :key="dot"
+        class="progress-dot inline-block"
+        :class="{ 'is-active': dot === activeStepIndex + 1 }"
+      />
+    </div>
   </section>
 </template>
 
@@ -138,7 +149,7 @@ export default {
     }
   }
 
-  &.is-mobile {
+  &.is-mobile .interface {
     .is-active {
       transform: translateY(-24px);
     }
@@ -171,6 +182,21 @@ export default {
     &-img {
       pointer-events: none;
       user-select: none;
+    }
+  }
+
+  .progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $gray-700;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &.is-active {
+      background-color: $theme-primary-deep;
     }
   }
 }

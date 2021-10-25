@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="media-links flex justify-center gap-8"
+    class="media-links flex justify-center gap-4"
     :class="{ 'is-fixed': positionFixed }"
   >
     <li
@@ -12,11 +12,11 @@
       <img
         :src="require(`/static/image/media/${media.key}.png`)"
         :alt="media.key"
-        class="media-img"
+        class="media-img self-center"
       >
       <span
         v-if="showTitle"
-        class="media-title text-center mt-2"
+        class="media-title text-center mt-2 px-2"
       >{{ media.title }}</span>
     </li>
   </ul>
@@ -62,6 +62,13 @@ export default {
 @import '@/assets/styles/variables.scss';
 
 .media-links {
+  .media-img {
+    width: 88px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 0 #fff;
+  }
+
   &.is-fixed {
     position: fixed;
     right: 20px;
@@ -69,11 +76,10 @@ export default {
     display: flex;
     flex-direction: column-reverse;
     z-index: 1;
-  }
 
-  .media-img {
-    width: 88px;
-    cursor: pointer;
+    .media-img {
+      width: 60px;
+    }
   }
 
   .media-title {
