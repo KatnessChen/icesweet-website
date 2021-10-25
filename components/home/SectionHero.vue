@@ -10,7 +10,10 @@
       >
         找到百分百戀人
       </div>
-      <div class="btn action-btn">
+      <div
+        class="btn action-btn"
+        @click="onClickRegister"
+      >
         快速註冊
       </div>
     </div>
@@ -60,6 +63,13 @@ export default {
               'font-size': '34px'
             }
           }
+    }
+  },
+  methods: {
+    onClickRegister () {
+      const qaEnv = ['beta', 'localhost']
+      const isQaEnv = qaEnv.find(env => window.location.hostname.includes(env))
+      window.open(isQaEnv ? 'https://www.icebaby.ml/' : 'https://platform.icesweet.com.tw/')
     }
   }
 }
