@@ -149,8 +149,8 @@ export default {
     }
   }
 
-  &.is-mobile .interface {
-    .is-active {
+  &.is-mobile {
+    .interface.is-active {
       transform: translateY(-24px);
     }
   }
