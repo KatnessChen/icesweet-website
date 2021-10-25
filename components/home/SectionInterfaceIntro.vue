@@ -36,7 +36,7 @@
       </div>
     </div>
     <div
-      v-if="isMobile"
+      v-if="isMobile || isTablet"
       class="w-full text-center"
     >
       <div

@@ -3,7 +3,10 @@
     class="container m-auto"
     :class="{ 'is-desktop': isDesktop }"
   >
-    <div class="component-article text-center">
+    <div
+      class="component-article text-center"
+      :style="{ padding: isMobile ? '60px 20px' : '60px' }"
+    >
       <div class="title">
         我要當貴妃
       </div>
@@ -40,8 +43,9 @@
           <div class="paragraph">
             勇敢地踏出第一步吧
           </div>
-          <div class="btn mt-8">
-            我要加入
+          <div class="btn mt-8" @click="onClickJoin">
+            <img :src="require('/static/image/media/line.png')" class="inline-block w-8 mr-2">
+            <span class="whitespace-nowrap">我要加入</span>
           </div>
         </div>
       </div>
@@ -59,7 +63,12 @@ export default Vue.extend({
     title: '成為貴妃'
   },
   computed: {
-    ...mapGetters(['isDesktop'])
+    ...mapGetters(['isDesktop', 'isMobile'])
+  },
+  methods: {
+    onClickJoin () {
+      window.open('https://lin.ee/MlVgV2e')
+    }
   }
 })
 </script>
@@ -91,7 +100,7 @@ export default Vue.extend({
 }
 
 .btn {
-  width: 165px;
+  width: 180px;
   border-radius: 32px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-image: linear-gradient(to bottom, #0edc62, #06c755);
