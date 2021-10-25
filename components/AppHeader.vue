@@ -3,7 +3,7 @@
     <div class="px-4 flex justify-between items-center">
       <logo
         with-text
-        :logo-image-height="60"
+        :logo-image-height="44"
         class="cursor-pointer"
         @click.native="onClickLogo"
       />
@@ -101,20 +101,21 @@ export default Vue.extend({
 }
 
 .header {
-  background-color: $theme-primary;
+  background-color: $theme-primary-light;
   color: $white;
   width: 100%;
   padding: $app-header-py;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.102);
 
   .mobile-menu {
     display: none;
     flex-direction: column;
     align-items: center;
-    top: $app-header-height;
+    top: $app-header-height + 1px;
     left: 0;
     width: 100%;
     position: fixed;
-    background-color: $theme-primary;
+    background-color: $theme-primary-light;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
     &.is-active {
