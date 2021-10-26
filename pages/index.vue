@@ -13,7 +13,7 @@
     <!-- 影音區 -->
     <section-video />
     <!-- 統計數字 -->
-    <section-slogan />
+    <!-- <section-slogan /> -->
   </div>
 </template>
 
