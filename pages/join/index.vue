@@ -55,7 +55,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
 export default Vue.extend({
   layout: 'WithHeaderFooter',
@@ -63,11 +63,12 @@ export default Vue.extend({
     title: '成為貴妃'
   },
   computed: {
-    ...mapGetters(['isDesktop', 'isMobile'])
+    ...mapGetters(['isDesktop', 'isMobile']),
+    ...mapState(['url'])
   },
   methods: {
     onClickJoin () {
-      window.open('https://lin.ee/MlVgV2e')
+      window.open(this.url.lineForGirl)
     }
   }
 })

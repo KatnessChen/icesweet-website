@@ -51,11 +51,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'SectionHero',
   computed: {
+    ...mapState(['url']),
     ...mapGetters(['isMobile']),
     styleInfo () {
       return this.isMobile
@@ -84,9 +85,9 @@ export default {
   },
   methods: {
     onClickRegister () {
-      const qaEnv = ['beta', 'localhost']
+      const qaEnv = ['beta', 'localhost', 'ml']
       const isQaEnv = qaEnv.find(env => window.location.hostname.includes(env))
-      window.open(isQaEnv ? 'https://www.icebaby.ml/' : 'https://platform.icesweet.com.tw/')
+      window.open(isQaEnv ? this.url.qaEnv : this.prodEnv)
     },
     onClickJoin () {
       this.$router.push('/join')

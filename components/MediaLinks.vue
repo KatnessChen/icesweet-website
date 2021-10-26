@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'MediaLinks',
   props: {
@@ -36,6 +38,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(['url']),
     mediaLinks () {
       return [
         { key: 'facebook', title: 'Facebook', callBack: this.onClickFacebook },
@@ -46,13 +49,13 @@ export default {
   },
   methods: {
     onClickFacebook () {
-      console.log(1)
+      window.open(this.url.fb)
     },
     onClickInstagram () {
-      console.log(2)
+      window.open(this.url.ig)
     },
     onClickLine () {
-      window.open('https://lin.ee/MlVgV2e')
+      window.open(this.url.lineForPlayer)
     }
   }
 }
