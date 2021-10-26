@@ -1,0 +1,20 @@
+// mobile
+@media (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+// tablet
+@media (max-width: 991px) and (min-width: 577px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+// desktop
+@media (min-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+}

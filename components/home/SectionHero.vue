@@ -5,16 +5,39 @@
       :style="styleInfo.actionBoxPosition"
     >
       <div
-        class="action-text whitespace-nowrap"
+        class="action-block whitespace-nowrap"
         :style="styleInfo.actionText"
       >
-        找到百分百戀人
-      </div>
-      <div
-        class="btn action-btn"
-        @click="onClickRegister"
-      >
-        快速註冊
+        <div
+          class="action-btn"
+          @click="onClickRegister"
+        >
+          <img
+            class="action-icon"
+            :src="require('/static/image/entrance.webp')"
+          >
+          <div class="sup-title">
+            進入貴妃大廳
+          </div>
+          <div class="title">
+            按此免費登入
+          </div>
+        </div>
+        <div
+          class="action-btn"
+          @click="onClickJoin"
+        >
+          <img
+            class="action-icon"
+            :src="require('/static/image/star.webp')"
+          >
+          <div class="sup-title">
+            我要當貴妃
+          </div>
+          <div class="title">
+            按此進入徵選
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -44,9 +67,6 @@ export default {
               top: '56%',
               left: '50%',
               transform: 'translateX(-50%)'
-            },
-            actionText: {
-              'font-size': '24px'
             }
           }
         : {
@@ -58,9 +78,6 @@ export default {
               top: '50%',
               left: '25%',
               transform: 'translate(-50%, -50%)'
-            },
-            actionText: {
-              'font-size': '34px'
             }
           }
     }
@@ -70,6 +87,9 @@ export default {
       const qaEnv = ['beta', 'localhost']
       const isQaEnv = qaEnv.find(env => window.location.hostname.includes(env))
       window.open(isQaEnv ? 'https://www.icebaby.ml/' : 'https://platform.icesweet.com.tw/')
+    },
+    onClickJoin () {
+      this.$router.push('/join')
     }
   }
 }
@@ -89,23 +109,54 @@ export default {
 
   .action {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.7);
 
-    &-text {
+    &-block {
+      display: flex;
       font-size: 34px;
       color: #5e5e5e;
       margin-bottom: 40px;
       position: relative;
+      gap: 10px;
+    }
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 130%;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: $theme-primary-deep;
-        width: 60px;
-        height: 2px;
+    &-icon {
+      width: 3.6rem;
+      margin-bottom: 24px;
+    }
+
+    &-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      border-radius: 5px;
+      cursor: pointer;
+
+      .sup-title {
+        font-size: 1.2rem;
+      }
+
+      .title {
+        font-size: 1.4rem;
+      }
+
+      &:first-child {
+        color: #fff;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+        background-image: linear-gradient(to bottom, #f22876, #942dd9);
+      }
+
+      &:last-child {
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+
+        .sup-title {
+          color: $gray-300;
+        }
+
+        .title {
+          color: $gray-100;
+        }
       }
     }
   }
