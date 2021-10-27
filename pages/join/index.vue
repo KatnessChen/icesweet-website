@@ -10,12 +10,12 @@
       <div class="title">
         我要當貴妃
       </div>
-      <div class="flex flex-col lg:flex-row items-start">
+      <div class="grid grid-col-1 lg:grid-cols-5 gap-8">
         <img
           :src="require('/static/image/join/join.png')"
-          class="img col-left mb-10 lg:mb-0 lg:mr-10"
+          class="img col-span-1 lg:col-span-3"
         >
-        <div class="col-right">
+        <div class="col-span-1 lg:col-span-2">
           <div class="paragraph">
             交朋友，是我們的日常
           </div>
