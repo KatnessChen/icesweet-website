@@ -16,9 +16,9 @@
           :src="require(`/static/svg/${feature.icon}.svg`)"
           class="feature-icon"
         >
-        <span class="mt-1 whitespace-nowrap flex">
+        <span class="mt-2 whitespace-nowrap flex">
           {{ feature.label }}
-          <img v-if="isTabletOrAbove" :src="require('/static/image/chevron-pink.svg')" class="ml-1">
+          <img :src="require('/static/image/chevron-pink.svg')" class="ml-1">
         </span>
       </nuxt-link>
     </ul>
@@ -34,7 +34,7 @@ export default {
   components: {
   },
   computed: {
-    ...mapGetters(['isDesktop', 'isTabletOrAbove']),
+    ...mapGetters(['isDesktop']),
     features () {
       return [
         { routeName: `${parentRoute}-choice`, label: '貴妃嚴選', icon: 'choice' },
@@ -56,7 +56,7 @@ export default {
 
   .menu-item {
     flex-basis: 24%;
-    min-width: 90px;
+    min-width: 101px;
     max-width: 125px;
     border-radius: 18px;
     background-color: #fff;

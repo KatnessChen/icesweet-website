@@ -106,6 +106,7 @@ export default Vue.extend({
   width: 100%;
   padding: $app-header-py;
   border-bottom: 1px solid rgba(255, 255, 255, 0.102);
+  font-size: 16px;
 
   .mobile-menu {
     display: none;

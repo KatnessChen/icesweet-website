@@ -1,12 +1,12 @@
 <template>
   <ul
-    class="media-links flex justify-center gap-4"
+    class="media-links flex justify-center"
     :class="{ 'is-fixed': positionFixed }"
   >
     <li
       v-for="media in mediaLinks"
       :key="media.key"
-      class="flex flex-col items-stretch"
+      class="media-li flex flex-col items-stretch mb-4"
       @click="media.callBack"
     >
       <img
@@ -72,6 +72,13 @@ export default {
     box-shadow: 0 0 20px 0 #fff;
   }
 
+  .media-li {
+    &:not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 16px;
+    }
+  }
+
   &.is-fixed {
     position: fixed;
     right: 20px;
@@ -82,6 +89,13 @@ export default {
 
     .media-img {
       width: 60px;
+    }
+
+    .media-li {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+        margin-right: 0;
+      }
     }
   }
 

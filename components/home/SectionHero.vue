@@ -41,6 +41,7 @@
       </div>
     </div>
     <div
+      v-show="deviceWidth > 0"
       class="banner-img"
       :style="{
         height: styleInfo.height,
@@ -56,7 +57,7 @@ import { mapState, mapGetters } from 'vuex'
 export default {
   name: 'SectionHero',
   computed: {
-    ...mapState(['url']),
+    ...mapState(['deviceWidth', 'url']),
     ...mapGetters(['isMobile']),
     styleInfo () {
       return this.isMobile
