@@ -16,6 +16,25 @@
       <div class="paragraph">
         最後，本平台所有工作人員感謝您的參與，也衷心祝福您能夠在本平台尋得一位知心好友，為您的精神生活注入一道溫暖心扉的力量，讓各位的心靈得到最大的滿足，謝謝您的使用，謝謝。
       </div>
+      <div class="title-second">
+        冰山撞甜心收費與消費方式
+      </div>
+      <ol class="paragraph">
+        與一位貴妃聊天30分鐘收費100元(計費方式以30分鐘為一個單位)
+      </ol>
+      <div class="title-second">
+        公司資訊
+      </div>
+      <div class="paragraph">
+        冰山撞甜心是由鴻道資訊公司經營
+      </div>
+      <div class="paragraph">
+        本公司地址：NO.712,Siyuan Road,Xinzhuang District，New Taipei city 242,Taiwan(R.O.C)
+      </div>
+      <div class="paragraph">
+        您可以透過Ｅ-Mail與我們聯繫
+        公司信箱：57668icesweet@gmail.com
+      </div>
     </div>
   </div>
 </template>
