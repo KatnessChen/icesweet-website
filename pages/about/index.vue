@@ -16,6 +16,31 @@
       <div class="paragraph">
         最後，本平台所有工作人員感謝您的參與，也衷心祝福您能夠在本平台尋得一位知心好友，為您的精神生活注入一道溫暖心扉的力量，讓各位的心靈得到最大的滿足，謝謝您的使用，謝謝。
       </div>
+      <div class="title-second">
+        冰山撞甜心收費與消費方式
+      </div>
+      <ol class="ordered-list">
+        <li>1、您可以先在商城購買白鑽</li>
+        <li>2、購買白鑽後您可以在您的電子錢包裡看到您購買的白鑽數量</li>
+        <li>3、您可以在貴妃大廳選擇您想要聊天的貴妃</li>
+        <li>4、選擇好貴妃後您可以點下顯示在貴妃照片下方的按鈕進入聊天</li>
+        <li>5、您點擊聊天按鈕後本站會以每30分鐘/100白鑽的方式從您的電子錢包扣白鑽</li>
+        <li>6、當白鑽不足時您需要回到商城繼續購買禮包</li>
+        <li>7、提醒您，點擊每一位貴妃聊天30分鐘都會收取100白鑽，舉例：點一位貴妃聊天扣取100白鑽，點擊兩位貴妃扣取200白鑽，以此類推</li>
+      </ol>
+      <div class="title-second">
+        公司資訊
+      </div>
+      <div class="paragraph">
+        冰山撞甜心是由鴻道資訊公司經營
+      </div>
+      <div class="paragraph">
+        本公司地址：NO.712,Siyuan Road,Xinzhuang District，New Taipei city 242,Taiwan(R.O.C)
+      </div>
+      <div class="paragraph">
+        您可以透過Ｅ-Mail與我們聯繫
+        公司信箱：57668icesweet@gmail.com
+      </div>
     </div>
   </div>
 </template>
