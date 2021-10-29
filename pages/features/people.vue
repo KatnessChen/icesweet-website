@@ -12,7 +12,7 @@
     <div class="paragraph">
       還請您多多上線，保證您每次上線都會有不一樣的驚喜喔!
     </div>
-    <img :src="require('/static/image/people/people.png')" class="mt-7">
+    <img :src="require('/static/image/people/people.webp')" class="mt-7">
   </feature-page>
 </template>
 
