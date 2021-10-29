@@ -3,6 +3,9 @@
     <img
       :src="require('/static/image/arrow.png')"
       class="back-img mr-1"
+      width="24"
+      height="24"
+      alt="返回首頁"
     >
     <span
       class="cursor-pointer"

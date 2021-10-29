@@ -9,7 +9,11 @@
     <div class="paragraph">
       因此若您有任何想法，也歡迎您告訴我們，我們一定會認真聽取所有的建議，唯有您的滿意，才是我們追求的方向。
     </div>
-    <img :src="require('/static/image/like/like.webp')" class="mt-7">
+    <img
+      :src="require('/static/image/like/like.webp')"
+      class="mt-7"
+      alt="使用者滿意此聊天服務"
+    >
   </feature-page>
 </template>
 

@@ -18,8 +18,16 @@
     <div class="paragraph">
       本平台的貴妃，每一位都是貨真價實的；聊天室裡您所看到的每一句話，也一定是本人回覆的，請各位用戶完全可以放心。
     </div>
-    <img :src="require('/static/image/choice/choice-1.webp')" class="mt-7">
-    <img :src="require('/static/image/choice/choice-2.webp')" class="mt-7">
+    <img
+      :src="require('/static/image/choice/choice-1.webp')"
+      class="mt-7"
+      alt="貴妃徵選活動照片"
+    >
+    <img
+      :src="require('/static/image/choice/choice-2.webp')"
+      class="mt-7"
+      alt="貴妃徵選活動照片"
+    >
   </feature-page>
 </template>
 

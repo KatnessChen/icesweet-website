@@ -32,6 +32,7 @@
         <img
           class="intro-img"
           :src="require(`@/static/image/intro/${intro.imageFile}`)"
+          :alt="intro.alt"
         >
       </div>
     </div>
@@ -75,9 +76,9 @@ export default {
     },
     intros () {
       return [
-        { title: '貴妃大廳', subTitle: '真實在線', imageFile: 'intro-1.webp' },
-        { title: '貴妃簡介', subTitle: '一點即聊', imageFile: 'intro-2.webp' },
-        { title: '聊天畫面', subTitle: '一對一聊天', imageFile: 'intro-3.webp' }
+        { title: '貴妃大廳', subTitle: '真實在線', imageFile: 'intro-1.webp', alt: '與真實在線的貴妃聊天' },
+        { title: '貴妃簡介', subTitle: '一點即聊', imageFile: 'intro-2.webp', alt: '點按聊天按鈕馬上就能聊天' },
+        { title: '聊天畫面', subTitle: '一對一聊天', imageFile: 'intro-3.webp', alt: '與貴妃享受專屬一對一聊天' }
       ]
     },
     imageSize () {

@@ -15,6 +15,9 @@
           <img
             class="action-icon"
             :src="require('/static/image/entrance.webp')"
+            alt="按此免費進入貴妃大廳"
+            width="3.6rem"
+            height="3.6rem"
           >
           <div class="sup-title">
             進入貴妃大廳
@@ -30,6 +33,7 @@
           <img
             class="action-icon"
             :src="require('/static/image/star.webp')"
+            alt="按此加入徵選成為貴妃"
           >
           <div class="sup-title">
             我要當貴妃
@@ -44,7 +48,6 @@
       v-show="deviceWidth > 0"
       class="banner-img"
       :style="{
-        height: styleInfo.height,
         'background-image': 'url(' + require(`@/static/image/${styleInfo.bannerFile}.webp`) + ')'
       }"
     />
