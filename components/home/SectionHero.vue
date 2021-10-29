@@ -86,9 +86,16 @@ export default {
   },
   methods: {
     onClickRegister () {
-      const qaEnv = ['beta', 'localhost', 'ml']
+      const qaEnv = ['beta', 'localhost', 'icesweet']
       const isQaEnv = qaEnv.find(env => window.location.hostname.includes(env))
-      window.open(isQaEnv ? this.url.qaEnv : this.prodEnv)
+      const platformUrl = isQaEnv ? this.url.qaEnv : this.url.prodEnv
+      const inviteCode = localStorage.getItem(this.inviteKey)
+
+      if (inviteCode) {
+        window.open(platformUrl + inviteCode ? `?invite=${inviteCode}` : '')
+      } else {
+        window.open(platformUrl)
+      }
     },
     onClickJoin () {
       this.$router.push('/join')
