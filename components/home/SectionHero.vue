@@ -49,7 +49,7 @@
     </div>
     <div
       v-show="deviceWidth > 0"
-      class="banner-img"
+      class="banner-img h-full"
       :style="{
         'background-image': 'url(' + require(`@/static/image/${styleInfo.bannerFile}.webp`) + ')'
       }"
