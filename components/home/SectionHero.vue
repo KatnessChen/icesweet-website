@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     onClickRegister () {
-      const qaEnv = ['beta', 'localhost', 'icesweet']
+      const qaEnv = ['beta', 'localhost', 'icebaby']
       const isQaEnv = qaEnv.find(env => window.location.hostname.includes(env))
       const platformUrl = isQaEnv ? this.url.qaEnv : this.url.prodEnv
       const inviteCode = localStorage.getItem(this.inviteKey)
