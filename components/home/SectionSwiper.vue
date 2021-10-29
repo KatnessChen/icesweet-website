@@ -29,14 +29,14 @@ export default {
     banners () {
       return this.isMobile
         ? [
-            'image-sm-1.png',
-            'image-sm-2.png',
-            'image-sm-3.png'
+            'image-sm-1.webp',
+            'image-sm-2.webp',
+            'image-sm-3.webp'
           ]
         : [
-            'image-1.png',
-            'image-2.png',
-            'image-3.png'
+            'image-1.webp',
+            'image-2.webp',
+            'image-3.webp'
           ]
     },
     styleInfo () {

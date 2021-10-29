@@ -9,8 +9,8 @@
     <div class="paragraph">
       總之，我們一定會努力滿足您想要一親芳澤的心願。活動細節及辦法，不久的將來，我們將會公佈在粉絲專頁及官方LINE，敬請期待喔~
     </div>
-    <img :src="require('/static/image/choice/choice-1.png')" class="mt-7">
-    <img :src="require('/static/image/choice/choice-2.png')" class="mt-7">
+    <img :src="require('/static/image/choice/choice-1.webp')" class="mt-7">
+    <img :src="require('/static/image/choice/choice-2.webp')" class="mt-7">
   </feature-page>
 </template>
 

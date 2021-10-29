@@ -75,9 +75,9 @@ export default {
     },
     intros () {
       return [
-        { title: '貴妃大廳', subTitle: '真實在線', imageFile: 'intro-1.png' },
-        { title: '貴妃簡介', subTitle: '一點即聊', imageFile: 'intro-2.png' },
-        { title: '聊天畫面', subTitle: '一對一聊天', imageFile: 'intro-3.png' }
+        { title: '貴妃大廳', subTitle: '真實在線', imageFile: 'intro-1.webp' },
+        { title: '貴妃簡介', subTitle: '一點即聊', imageFile: 'intro-2.webp' },
+        { title: '聊天畫面', subTitle: '一對一聊天', imageFile: 'intro-3.webp' }
       ]
     },
     imageSize () {

@@ -9,14 +9,14 @@
     <div class="paragraph">
       總之，我們一定會努力滿足您想要一親芳澤的心願。活動細節及辦法，不久的將來，我們將會公佈在粉絲專頁及官方LINE，敬請期待喔~
     </div>
-    <img :src="require('/static/image/fans-only/fans-only-1.png')" class="mt-7">
+    <img :src="require('/static/image/fans-only/fans-only-1.webp')" class="mt-7">
     <div
       class="sub-img-container"
       :class="[isDesktop && 'is-desktop']"
     >
-      <img :src="require('/static/image/fans-only/fans-only-2.png')" class="sub-img">
-      <img :src="require('/static/image/fans-only/fans-only-3.png')" class="sub-img">
-      <img :src="require('/static/image/fans-only/fans-only-4.png')" class="sub-img">
+      <img :src="require('/static/image/fans-only/fans-only-2.webp')" class="sub-img">
+      <img :src="require('/static/image/fans-only/fans-only-3.webp')" class="sub-img">
+      <img :src="require('/static/image/fans-only/fans-only-4.webp')" class="sub-img">
     </div>
   </feature-page>
 </template>
