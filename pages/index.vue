@@ -24,7 +24,6 @@ import SectionSwiper from '@/components/home/SectionSwiper'
 import SectionMediaLinks from '@/components/home/SectionMediaLinks'
 import SectionFeatureMenu from '@/components/home/SectionFeatureMenu'
 import SectionInterfaceIntro from '@/components/home/SectionInterfaceIntro'
-import SectionSlogan from '@/components/home/SectionSlogan'
 import SectionVideo from '@/components/home/SectionVideo'
 
 export default {
@@ -35,7 +34,6 @@ export default {
     SectionMediaLinks,
     SectionFeatureMenu,
     SectionInterfaceIntro,
-    SectionSlogan,
     SectionVideo
   },
   layout: 'WithHeaderFooter',
@@ -44,6 +42,12 @@ export default {
   },
   computed: {
     ...mapState(['deviceWidth'])
+  },
+  mounted () {
+    const invite = this.$route.query.invite
+    if (invite) {
+      localStorage.setItem('invite', invite)
+    }
   }
 }
 </script>
