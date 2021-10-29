@@ -12,7 +12,7 @@
       </div>
       <div class="grid grid-col-1 lg:grid-cols-5 gap-8">
         <img
-          :src="require('/static/image/join/join.png')"
+          :src="require('/static/image/join/join.webp')"
           class="img col-span-1 lg:col-span-3"
         >
         <div class="col-span-1 lg:col-span-2">
