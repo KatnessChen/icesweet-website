@@ -45,7 +45,7 @@
       class="banner-img"
       :style="{
         height: styleInfo.height,
-        'background-image': 'url(' + require(`@/static/image/${styleInfo.bannerFile}.png`) + ')'
+        'background-image': 'url(' + require(`@/static/image/${styleInfo.bannerFile}.webp`) + ')'
       }"
     />
   </section>
@@ -60,7 +60,7 @@ export default {
     ...mapState(['deviceWidth', 'url']),
     ...mapGetters(['isMobile']),
     styleInfo () {
-      return this.isMobile
+      return this.deviceWidth < 560
         ? {
             height: '100vh',
             bannerFile: 'banner-sm',
@@ -78,7 +78,7 @@ export default {
               padding: '62px 54px 71px 55px',
               'font-size': '34px',
               top: '50%',
-              left: '25%',
+              left: '33%',
               transform: 'translate(-50%, -50%)'
             }
           }
