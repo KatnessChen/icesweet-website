@@ -1,5 +1,8 @@
 <template>
-  <section class="section-hero">
+  <section
+    class="section-hero"
+    :style="{ height: styleInfo.height }"
+  >
     <div
       class="action flex flex-col items-center"
       :style="styleInfo.actionBoxPosition"
