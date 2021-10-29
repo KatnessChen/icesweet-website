@@ -11,6 +11,7 @@
         :key="feature.routeName"
         :to="{ name: feature.routeName }"
         class="menu-item flex flex-col items-center"
+        tag="li"
       >
         <img
           :src="require(`/static/svg/${feature.icon}.svg`)"
