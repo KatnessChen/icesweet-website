@@ -88,3 +88,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# chrome light house reports
+/light_house_report
