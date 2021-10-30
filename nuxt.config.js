@@ -45,7 +45,16 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    hostname: 'https://www.icesweet.com.tw/',
+    defaults: {
+      changefreq: 'daily',
+      lastmod: new Date(),
+      priority: 1
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
