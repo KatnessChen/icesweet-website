@@ -6,12 +6,12 @@ export default {
   head: {
     title: '冰山撞甜心 - 官網',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'zh'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: '冰山撞甜心 - 官方行銷宣傳網站', name: '冰山撞甜心 - 官方行銷宣傳網站', content: '優質聊天社交平台 數量眾多貴妃與你聊天 簡易操作方式即可隨時開始聊天' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [

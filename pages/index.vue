@@ -51,7 +51,10 @@ export default {
     }
   },
   head: {
-    title: '冰山撞甜心 - 官網'
+    title: '冰山撞甜心 - 官網',
+    meta: [
+      { hid: '冰山撞甜心 - 官方行銷宣傳網站', name: '首頁', content: '冰山撞甜心是最新的社交聊天平台，內有眾多經過嚴選的優質貴妃與您專屬一對一聊天，未來並會舉辦實體粉絲見面會，歡迎使用推薦碼立即註冊' }
+    ]
   },
   computed: {
     observerOptions () {

@@ -213,7 +213,10 @@ import Vue from 'vue'
 export default Vue.extend({
   layout: 'WithHeaderFooter',
   head: {
-    title: '服務條款'
+    title: '服務條款',
+    meta: [
+      { hid: '服務條款', name: '服務條款', content: '歡迎來到最優質的聊天平台，為維持平台的優質環境，以下我們訂定了使用平台規範，所有會員加入平台前都應詳閱平台規範後使用平台' }
+    ]
   }
 })
 </script>

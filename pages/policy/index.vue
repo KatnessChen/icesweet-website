@@ -77,7 +77,10 @@ import Vue from 'vue'
 export default Vue.extend({
   layout: 'WithHeaderFooter',
   head: {
-    title: '隱私權政策'
+    title: '隱私權政策',
+    meta: [
+      { hid: '隱私權政策', name: '隱私權政策', content: '非常歡迎您光臨「冰山撞甜心」（以下簡稱本網站），為了讓您能夠安心使用本網站的各項服務與資訊，特此向您說明本網站的隱私權保護政策' }
+    ]
   }
 })
 </script>

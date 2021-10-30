@@ -30,7 +30,10 @@ export default Vue.extend({
   },
   layout: 'WithHeaderFooter',
   head: {
-    title: '海量貴妃'
+    title: '海量貴妃',
+    meta: [
+      { hid: '海量貴妃', name: '海量貴妃', content: '冰山撞甜心每個月貴妃增加的人數為400~600人，還請您多多上線，保證您每次上線都會有不一樣的驚喜喔!' }
+    ]
   }
 })
 </script>

@@ -61,7 +61,10 @@ import { mapGetters, mapState } from 'vuex'
 export default Vue.extend({
   layout: 'WithHeaderFooter',
   head: {
-    title: '成為貴妃'
+    title: '成為貴妃',
+    meta: [
+      { hid: '成為貴妃', name: '成為貴妃', content: '歡迎使用官方特別為貴妃成立的 Line 平台，加入徵選行列，開啟貴妃新人生' }
+    ]
   },
   computed: {
     ...mapGetters(['isDesktop', 'isMobile']),
