@@ -14,6 +14,7 @@
         <img
           :src="require('/static/image/join/join.webp')"
           class="img col-span-1 lg:col-span-3"
+          alt="一位女子在海邊的逆光倩影"
         >
         <div class="col-span-1 lg:col-span-2">
           <div class="paragraph">
@@ -44,7 +45,7 @@
             勇敢地踏出第一步吧
           </div>
           <div class="btn mt-8" @click="onClickJoin">
-            <img :src="require('/static/image/media/line.png')" class="inline-block w-8 mr-2">
+            <img :src="require('/static/image/media/line.png')" class="inline-block w-8 mr-2" alt="官方 Line 連結圖示">
             <span class="whitespace-nowrap">我要加入</span>
           </div>
         </div>
@@ -60,7 +61,10 @@ import { mapGetters, mapState } from 'vuex'
 export default Vue.extend({
   layout: 'WithHeaderFooter',
   head: {
-    title: '成為貴妃'
+    title: '成為貴妃',
+    meta: [
+      { hid: '成為貴妃', name: '成為貴妃', content: '歡迎使用官方特別為貴妃成立的 Line 平台，加入徵選行列，開啟貴妃新人生' }
+    ]
   },
   computed: {
     ...mapGetters(['isDesktop', 'isMobile']),

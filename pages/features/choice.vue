@@ -18,8 +18,16 @@
     <div class="paragraph">
       本平台的貴妃，每一位都是貨真價實的；聊天室裡您所看到的每一句話，也一定是本人回覆的，請各位用戶完全可以放心。
     </div>
-    <img :src="require('/static/image/choice/choice-1.webp')" class="mt-7">
-    <img :src="require('/static/image/choice/choice-2.webp')" class="mt-7">
+    <img
+      :src="require('/static/image/choice/choice-1.webp')"
+      class="mt-7"
+      alt="貴妃徵選活動照片"
+    >
+    <img
+      :src="require('/static/image/choice/choice-2.webp')"
+      class="mt-7"
+      alt="貴妃徵選活動照片"
+    >
   </feature-page>
 </template>
 
@@ -33,7 +41,10 @@ export default Vue.extend({
   },
   layout: 'WithHeaderFooter',
   head: {
-    title: '貴妃嚴選'
+    title: '貴妃嚴選',
+    meta: [
+      { hid: '貴妃嚴選', name: '貴妃嚴選', content: '本平台的貴妃皆經過仔細身分確認和評選，且一定為本人親自聊天，因為我們深信真誠是人與人交流中最重要的部份，而這一部份也是任何科技所無法取代的' }
+    ]
   }
 })
 </script>

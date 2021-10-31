@@ -11,14 +11,24 @@
         :key="feature.routeName"
         :to="{ name: feature.routeName }"
         class="menu-item flex flex-col items-center"
+        tag="li"
       >
         <img
           :src="require(`/static/svg/${feature.icon}.svg`)"
           class="feature-icon"
+          :alt="`查看${feature.label}頁面`"
+          width="66"
+          height="66"
         >
         <span class="mt-2 whitespace-nowrap flex">
           {{ feature.label }}
-          <img :src="require('/static/image/chevron-pink.svg')" class="ml-1">
+          <img
+            :src="require('/static/image/chevron-pink.svg')"
+            class="ml-1"
+            :alt="`查看${feature.label}頁面`"
+            width="18"
+            height="18"
+          >
         </span>
       </nuxt-link>
     </ul>

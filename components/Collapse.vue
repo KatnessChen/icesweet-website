@@ -9,7 +9,12 @@
     >
       <span class="collapse__header-title">{{ title }}</span>
       <span class="control">
-        <img :src="require('/static/image/chevron.png')" alt="">
+        <img
+          :src="require('/static/image/chevron.png')"
+          alt="點按以打開或收合回答區塊"
+          width="24"
+          height="24"
+        >
       </span>
     </div>
     <div class="collapse__body">

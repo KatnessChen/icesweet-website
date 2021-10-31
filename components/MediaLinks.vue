@@ -11,7 +11,7 @@
     >
       <img
         :src="require(`/static/image/media/${media.key}.png`)"
-        :alt="media.key"
+        :alt="media.alt"
         class="media-img self-center"
       >
       <span
@@ -41,9 +41,9 @@ export default {
     ...mapState(['url']),
     mediaLinks () {
       return [
-        { key: 'facebook', title: 'Facebook', callBack: this.onClickFacebook },
-        { key: 'instagram', title: 'Instagram', callBack: this.onClickInstagram },
-        { key: 'line', title: 'Line 官方帳號', callBack: this.onClickLine }
+        { key: 'facebook', title: 'Facebook', callBack: this.onClickFacebook, alt: '前往官方 Facebook 粉絲頁' },
+        { key: 'instagram', title: 'Instagram', callBack: this.onClickInstagram, alt: '前往官方 Instagram 粉絲頁' },
+        { key: 'line', title: 'Line 官方帳號', callBack: this.onClickLine, alt: '前往官方 Line' }
       ]
     }
   },

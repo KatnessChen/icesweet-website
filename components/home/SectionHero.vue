@@ -1,5 +1,8 @@
 <template>
-  <section class="section-hero">
+  <section
+    class="section-hero"
+    :style="{ height: styleInfo.height }"
+  >
     <div
       class="action flex flex-col items-center"
       :style="styleInfo.actionBoxPosition"
@@ -15,6 +18,9 @@
           <img
             class="action-icon"
             :src="require('/static/image/entrance.webp')"
+            alt="按此免費進入貴妃大廳"
+            width="3.6rem"
+            height="3.6rem"
           >
           <div class="sup-title">
             進入貴妃大廳
@@ -30,6 +36,7 @@
           <img
             class="action-icon"
             :src="require('/static/image/star.webp')"
+            alt="按此加入徵選成為貴妃"
           >
           <div class="sup-title">
             我要當貴妃
@@ -42,9 +49,8 @@
     </div>
     <div
       v-show="deviceWidth > 0"
-      class="banner-img"
+      class="banner-img h-full"
       :style="{
-        height: styleInfo.height,
         'background-image': 'url(' + require(`@/static/image/${styleInfo.bannerFile}.webp`) + ')'
       }"
     />

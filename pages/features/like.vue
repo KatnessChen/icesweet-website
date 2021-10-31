@@ -9,7 +9,11 @@
     <div class="paragraph">
       因此若您有任何想法，也歡迎您告訴我們，我們一定會認真聽取所有的建議，唯有您的滿意，才是我們追求的方向。
     </div>
-    <img :src="require('/static/image/like/like.webp')" class="mt-7">
+    <img
+      :src="require('/static/image/like/like.webp')"
+      class="mt-7"
+      alt="使用者滿意此聊天服務"
+    >
   </feature-page>
 </template>
 
@@ -23,7 +27,10 @@ export default Vue.extend({
   },
   layout: 'WithHeaderFooter',
   head: {
-    title: '市場滿意度'
+    title: '市場滿意度',
+    meta: [
+      { hid: '市場滿意度', name: '市場滿意度', content: '冰山撞甜心在正式上線前，即針對1500名試用者做滿意度調查，得到了近98％的好評，「冰山撞甜心」絕對是最重視用戶感受的平台，您的滿意度，就是我們努力經營的原動力' }
+    ]
   }
 })
 </script>
