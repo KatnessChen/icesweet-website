@@ -95,10 +95,10 @@ export default {
       const qaEnv = ['beta', 'localhost', 'icebaby']
       const isQaEnv = qaEnv.find(env => window.location.hostname.includes(env))
       const platformUrl = isQaEnv ? this.url.qaEnv : this.url.prodEnv
-      const inviteCode = localStorage.getItem(this.inviteKey)
+      const inviteCode = localStorage.getItem('invite')
 
       if (inviteCode) {
-        window.open(platformUrl + inviteCode ? `?invite=${inviteCode}` : '')
+        window.open(platformUrl + `?invite=${inviteCode}`)
       } else {
         window.open(platformUrl)
       }
