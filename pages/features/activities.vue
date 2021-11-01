@@ -19,6 +19,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState } from 'vuex'
 import FeaturePage from '@/components/FeaturePage.vue'
 
 export default Vue.extend({
@@ -26,11 +27,20 @@ export default Vue.extend({
     FeaturePage
   },
   layout: 'WithHeaderFooter',
-  head: {
-    title: '創新活動',
-    meta: [
-      { hid: '創新活動', name: '創新活動', content: '為了讓您在冰山撞甜心擁有最不一樣的體驗與感受，我們特別策劃了一系列不同主題的精采活動。如:線上闖關活動、貴妃商城、推出貴妃聯名商品、線上語音聊天系統、異國情緣等活動' }
-    ]
+  head () {
+    return {
+      titleTemplate: '%s - 創新活動',
+      meta: [
+        { hid: `${this.brandName} - 創新活動`, name: '創新活動', content: '為了讓您在冰山撞甜心擁有最不一樣的體驗與感受，我們特別策劃了一系列不同主題的精采活動。如:線上闖關活動、貴妃商城、推出貴妃聯名商品、線上語音聊天系統、異國情緣等活動' },
+        { property: 'og:title', content: `${this.brandName} - 創新活動` },
+        { property: 'og:description', content: '為了讓您在冰山撞甜心擁有最不一樣的體驗與感受，我們特別策劃了一系列不同主題的精采活動。如:線上闖關活動、貴妃商城、推出貴妃聯名商品、線上語音聊天系統、異國情緣等活動' },
+        { property: 'og:url', content: this.url.websiteUrl + '/features/activities' },
+        { property: 'og:image', content: require('~/static/image/activities/activities-1.webp') }
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['url', 'brandName'])
   }
 })
 </script>

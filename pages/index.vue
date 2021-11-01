@@ -50,13 +50,20 @@ export default {
       loadRestPage: false
     }
   },
-  head: {
-    title: '冰山撞甜心 - 官網',
-    meta: [
-      { hid: '冰山撞甜心 - 官方行銷宣傳網站', name: '首頁', content: '冰山撞甜心是最新的社交聊天平台，內有眾多經過嚴選的優質貴妃與您專屬一對一聊天，未來並會舉辦實體粉絲見面會，歡迎使用推薦碼立即註冊' }
-    ]
+  head () {
+    return {
+      titleTemplate: '%s - 官網',
+      meta: [
+        { hid: '冰山撞甜心 icesweet - 官網', name: '首頁', content: '冰山撞甜心，嚴選甜心貴妃。用愛生活，讓世界美好；用心陪伴，讓你我幸福，現在就打開冰山撞甜心與貴妃談心，冰山撞甜心隨時隨地等候你，等你來開啟與貴妃的情緣，讓貴妃的甜蜜爆擊來溫暖你我的心！' },
+        { property: 'og:title', content: '冰山撞甜心 icesweet - 官網' },
+        { property: 'og:description', content: '冰山撞甜心，嚴選甜心貴妃。用愛生活，讓世界美好；用心陪伴，讓你我幸福，現在就打開冰山撞甜心與貴妃談心，冰山撞甜心隨時隨地等候你，等你來開啟與貴妃的情緣，讓貴妃的甜蜜爆擊來溫暖你我的心！' },
+        { property: 'og:url', content: this.url.websiteUrl },
+        { property: 'og:image', content: require('~/static/image/logo.png') }
+      ]
+    }
   },
   computed: {
+    ...mapState(['url']),
     observerOptions () {
       return {
         root: this.$refs.observedObject,

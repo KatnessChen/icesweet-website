@@ -33,6 +33,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState } from 'vuex'
 import FeaturePage from '@/components/FeaturePage.vue'
 
 export default Vue.extend({
@@ -40,11 +41,20 @@ export default Vue.extend({
     FeaturePage
   },
   layout: 'WithHeaderFooter',
-  head: {
-    title: '貴妃嚴選',
-    meta: [
-      { hid: '貴妃嚴選', name: '貴妃嚴選', content: '本平台的貴妃皆經過仔細身分確認和評選，且一定為本人親自聊天，因為我們深信真誠是人與人交流中最重要的部份，而這一部份也是任何科技所無法取代的' }
-    ]
+  head () {
+    return {
+      titleTemplate: '%s - 貴妃嚴選',
+      meta: [
+        { hid: `${this.brandName} - 貴妃嚴選`, name: '貴妃嚴選', content: '本平台的貴妃皆經過仔細身分確認和評選，且一定為本人親自聊天，因為我們深信真誠是人與人交流中最重要的部份，而這一部份也是任何科技所無法取代的' },
+        { property: 'og:title', content: `${this.brandName} - 貴妃嚴選` },
+        { property: 'og:description', content: '本平台的貴妃皆經過仔細身分確認和評選，且一定為本人親自聊天，因為我們深信真誠是人與人交流中最重要的部份，而這一部份也是任何科技所無法取代的' },
+        { property: 'og:url', content: this.url.websiteUrl + '/features/choice' },
+        { property: 'og:image', content: require('~/static/image/choice/choice-2.webp') }
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['url', 'brandName'])
   }
 })
 </script>
