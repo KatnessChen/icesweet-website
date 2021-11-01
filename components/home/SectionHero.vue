@@ -63,8 +63,8 @@ import { mapState, mapGetters } from 'vuex'
 export default {
   name: 'SectionHero',
   computed: {
-    ...mapState(['deviceWidth', 'url']),
-    ...mapGetters(['isMobile']),
+    ...mapState(['deviceWidth']),
+    ...mapGetters(['isMobile', 'platformUrl']),
     styleInfo () {
       return this.deviceWidth < 560
         ? {
@@ -92,15 +92,12 @@ export default {
   },
   methods: {
     onClickRegister () {
-      const qaEnv = ['beta', 'localhost', 'icebaby']
-      const isQaEnv = qaEnv.find(env => window.location.hostname.includes(env))
-      const platformUrl = isQaEnv ? this.url.qaEnv : this.url.prodEnv
-      const inviteCode = localStorage.getItem(this.inviteKey)
+      const inviteCode = localStorage.getItem('invite')
 
       if (inviteCode) {
-        window.open(platformUrl + inviteCode ? `?invite=${inviteCode}` : '')
+        window.open(this.platformUrl + `?invite=${inviteCode}`)
       } else {
-        window.open(platformUrl)
+        window.open(this.platformUrl)
       }
     },
     onClickJoin () {

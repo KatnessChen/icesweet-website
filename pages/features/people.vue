@@ -22,6 +22,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState } from 'vuex'
 import FeaturePage from '@/components/FeaturePage.vue'
 
 export default Vue.extend({
@@ -29,11 +30,20 @@ export default Vue.extend({
     FeaturePage
   },
   layout: 'WithHeaderFooter',
-  head: {
-    title: '海量貴妃',
-    meta: [
-      { hid: '海量貴妃', name: '海量貴妃', content: '冰山撞甜心每個月貴妃增加的人數為400~600人，還請您多多上線，保證您每次上線都會有不一樣的驚喜喔!' }
-    ]
+  head () {
+    return {
+      titleTemplate: '%s - 海量貴妃',
+      meta: [
+        { hid: `${this.brandName} - 海量貴妃`, name: '海量貴妃', content: '冰山撞甜心每個月貴妃增加的人數為400~600人，還請您多多上線，保證您每次上線都會有不一樣的驚喜喔!' },
+        { property: 'og:title', content: `${this.brandName} - 海量貴妃` },
+        { property: 'og:description', content: '冰山撞甜心每個月貴妃增加的人數為400~600人，還請您多多上線，保證您每次上線都會有不一樣的驚喜喔!' },
+        { property: 'og:url', content: this.url.websiteUrl + '/features/people' },
+        { property: 'og:image', content: require('~/static/image/people/people.webp') }
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['url', 'brandName'])
   }
 })
 </script>

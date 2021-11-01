@@ -154,6 +154,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState } from 'vuex'
 import Collapse from '@/components/Collapse.vue'
 
 export default Vue.extend({
@@ -161,8 +162,20 @@ export default Vue.extend({
     Collapse
   },
   layout: 'WithHeaderFooter',
-  head: {
-    title: '常見問題'
+  head () {
+    return {
+      titleTemplate: '%s - 常見問題',
+      meta: [
+        { hid: `${this.brandName} - 常見問題`, name: '常見問題', content: '關於平台的使用方式六大主題Q&A，使用上有任何疑問可以在這個頁面查詢' },
+        { property: 'og:title', content: `${this.brandName} - 常見問題` },
+        { property: 'og:description', content: '關於平台的使用方式六大主題Q&A，使用上有任何疑問可以在這個頁面查詢' },
+        { property: 'og:url', content: this.url.websiteUrl + '/faq' },
+        { property: 'og:image', content: require('~/static/image/logo.png') }
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['url', 'brandName'])
   }
 })
 </script>

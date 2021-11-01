@@ -39,7 +39,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import FeaturePage from '@/components/FeaturePage.vue'
 
 export default Vue.extend({
@@ -47,13 +47,20 @@ export default Vue.extend({
     FeaturePage
   },
   layout: 'WithHeaderFooter',
-  head: {
-    title: '粉絲見面會',
-    meta: [
-      { hid: '粉絲見面會', name: '粉絲見面會', content: '冰山撞甜心將會不定期舉辦各式主題及各種類型的面對面「粉絲見面會」，也許是共進午餐，也許是來一場音樂饗宴，甚至也可能是一次富有趣味性的戶外烤肉' }
-    ]
+  head () {
+    return {
+      titleTemplate: '%s - 粉絲見面會',
+      meta: [
+        { hid: `${this.brandName} - 粉絲見面會`, name: '粉絲見面會', content: '冰山撞甜心將會不定期舉辦各式主題及各種類型的面對面「粉絲見面會」，也許是共進午餐，也許是來一場音樂饗宴，甚至也可能是一次富有趣味性的戶外烤肉' },
+        { property: 'og:title', content: `${this.brandName} - 粉絲見面會` },
+        { property: 'og:description', content: '冰山撞甜心將會不定期舉辦各式主題及各種類型的面對面「粉絲見面會」，也許是共進午餐，也許是來一場音樂饗宴，甚至也可能是一次富有趣味性的戶外烤肉' },
+        { property: 'og:url', content: this.url.websiteUrl + '/features/fans-only' },
+        { property: 'og:image', content: require('~/static/image/fans-only/fans-only-2.webp') }
+      ]
+    }
   },
   computed: {
+    ...mapState(['url', 'brandName']),
     ...mapGetters(['isDesktop'])
   }
 })

@@ -19,6 +19,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState } from 'vuex'
 import FeaturePage from '@/components/FeaturePage.vue'
 
 export default Vue.extend({
@@ -26,11 +27,20 @@ export default Vue.extend({
     FeaturePage
   },
   layout: 'WithHeaderFooter',
-  head: {
-    title: '市場滿意度',
-    meta: [
-      { hid: '市場滿意度', name: '市場滿意度', content: '冰山撞甜心在正式上線前，即針對1500名試用者做滿意度調查，得到了近98％的好評，「冰山撞甜心」絕對是最重視用戶感受的平台，您的滿意度，就是我們努力經營的原動力' }
-    ]
+  head () {
+    return {
+      titleTemplate: '%s - 市場滿意度',
+      meta: [
+        { hid: `${this.brandName} - 市場滿意度`, name: '市場滿意度', content: '冰山撞甜心在正式上線前，即針對1500名試用者做滿意度調查，得到了近98％的好評，「冰山撞甜心」絕對是最重視用戶感受的平台，您的滿意度，就是我們努力經營的原動力' },
+        { property: 'og:title', content: `${this.brandName} - 市場滿意度` },
+        { property: 'og:description', content: '冰山撞甜心在正式上線前，即針對1500名試用者做滿意度調查，得到了近98％的好評，「冰山撞甜心」絕對是最重視用戶感受的平台，您的滿意度，就是我們努力經營的原動力' },
+        { property: 'og:url', content: this.url.websiteUrl + '/features/like' },
+        { property: 'og:image', content: require('~/static/image/like/like.webp') }
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['url', 'brandName'])
   }
 })
 </script>

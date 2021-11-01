@@ -73,14 +73,24 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState } from 'vuex'
 
 export default Vue.extend({
   layout: 'WithHeaderFooter',
-  head: {
-    title: '隱私權政策',
-    meta: [
-      { hid: '隱私權政策', name: '隱私權政策', content: '非常歡迎您光臨「冰山撞甜心」（以下簡稱本網站），為了讓您能夠安心使用本網站的各項服務與資訊，特此向您說明本網站的隱私權保護政策' }
-    ]
+  head () {
+    return {
+      titleTemplate: '%s - 隱私權政策',
+      meta: [
+        { hid: `${this.brandName} - 隱私權政策`, name: '隱私權政策', content: '非常歡迎您光臨「冰山撞甜心」（以下簡稱本網站），為了讓您能夠安心使用本網站的各項服務與資訊，特此向您說明本網站的隱私權保護政策' },
+        { property: 'og:title', content: `${this.brandName} - 隱私權政策` },
+        { property: 'og:description', content: '非常歡迎您光臨「冰山撞甜心」（以下簡稱本網站），為了讓您能夠安心使用本網站的各項服務與資訊，特此向您說明本網站的隱私權保護政策' },
+        { property: 'og:url', content: this.url.websiteUrl + '/policy' },
+        { property: 'og:image', content: require('~/static/image/logo.png') }
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['url', 'brandName'])
   }
 })
 </script>

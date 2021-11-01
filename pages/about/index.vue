@@ -47,11 +47,24 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState } from 'vuex'
 
 export default Vue.extend({
   layout: 'WithHeaderFooter',
-  head: {
-    title: '關於我們'
+  head () {
+    return {
+      titleTemplate: '%s - 關於我們',
+      meta: [
+        { hid: `${this.brandName} - 關於我們`, name: '關於我們', content: '本平台所有工作人員感謝您的參與，也衷心祝福您能夠在本平台尋得一位知心好友，為您的精神生活注入一道溫暖心扉的力量，讓各位的心靈得到最大的滿足' },
+        { property: 'og:title', content: `${this.brandName} - 關於我們` },
+        { property: 'og:description', content: '本平台所有工作人員感謝您的參與，也衷心祝福您能夠在本平台尋得一位知心好友，為您的精神生活注入一道溫暖心扉的力量，讓各位的心靈得到最大的滿足' },
+        { property: 'og:url', content: this.url.websiteUrl + '/about' },
+        { property: 'og:image', content: require('~/static/image/logo.png') }
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['url', 'brandName'])
   }
 })
 </script>

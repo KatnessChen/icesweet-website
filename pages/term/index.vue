@@ -209,14 +209,24 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState } from 'vuex'
 
 export default Vue.extend({
   layout: 'WithHeaderFooter',
-  head: {
-    title: '服務條款',
-    meta: [
-      { hid: '服務條款', name: '服務條款', content: '歡迎來到最優質的聊天平台，為維持平台的優質環境，以下我們訂定了使用平台規範，所有會員加入平台前都應詳閱平台規範後使用平台' }
-    ]
+  head () {
+    return {
+      titleTemplate: '%s - 服務條款',
+      meta: [
+        { hid: `${this.brandName} - 服務條款`, name: '服務條款', content: '歡迎來到最優質的聊天平台，為維持平台的優質環境，以下我們訂定了使用平台規範，所有會員加入平台前都應詳閱平台規範後使用平台' },
+        { property: 'og:title', content: `${this.brandName} - 服務條款` },
+        { property: 'og:description', content: '歡迎來到最優質的聊天平台，為維持平台的優質環境，以下我們訂定了使用平台規範，所有會員加入平台前都應詳閱平台規範後使用平台' },
+        { property: 'og:url', content: this.url.websiteUrl + '/term' },
+        { property: 'og:image', content: require('~/static/image/logo.png') }
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['url', 'brandName'])
   }
 })
 </script>
