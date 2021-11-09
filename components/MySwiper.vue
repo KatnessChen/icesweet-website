@@ -47,6 +47,14 @@ export default {
         }
       }
     }
+  },
+  computed: {
+    swiper () {
+      return this.$refs.mySwiper.$swiper
+    }
+  },
+  mounted () {
+    this.swiper.autoplay.start()
   }
 }
 </script>
