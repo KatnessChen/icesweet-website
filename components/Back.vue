@@ -1,5 +1,8 @@
 <template>
-  <div class="back flex items-center">
+  <div
+    class="back flex items-center cursor-pointer"
+    @click="$router.push({ name: 'index' })"
+  >
     <img
       :src="require('/static/image/arrow.png')"
       class="back-img mr-1"
@@ -7,10 +10,7 @@
       height="24"
       alt="返回首頁"
     >
-    <span
-      class="cursor-pointer"
-      @click="$router.push({ name: 'index' })"
-    >
+    <span>
       回首頁
     </span>
   </div>
