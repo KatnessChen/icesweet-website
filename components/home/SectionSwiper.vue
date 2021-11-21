@@ -28,8 +28,8 @@ export default {
     ...mapGetters(['isMobile']),
     styleInfo () {
       return this.isMobile
-        ? { height: '370px' }
-        : { height: '270px' }
+        ? { height: '115vw' }
+        : { height: '34.73vw' }
     }
   }
 }

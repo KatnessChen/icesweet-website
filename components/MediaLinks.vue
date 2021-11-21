@@ -66,7 +66,9 @@ export default {
 
 .media-links {
   .media-img {
-    width: 88px;
+    width: 16vmin;
+    min-width: 40px;
+    max-width: 88px;
     cursor: pointer;
     border-radius: 50%;
     box-shadow: 0 0 20px 0 #fff;
@@ -75,7 +77,7 @@ export default {
   .media-li {
     &:not(:last-child) {
       margin-bottom: 0;
-      margin-right: 16px;
+      margin-right: 5vmin;
     }
   }
 
@@ -88,12 +90,12 @@ export default {
     z-index: 1;
 
     .media-img {
-      width: 60px;
+      width: 5vmin;
     }
 
     .media-li {
       &:not(:last-child) {
-        margin-bottom: 16px;
+        margin-bottom: 12px;
         margin-right: 0;
       }
     }

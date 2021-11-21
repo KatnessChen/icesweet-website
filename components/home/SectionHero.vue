@@ -68,7 +68,7 @@ export default {
     styleInfo () {
       return this.deviceWidth < 560
         ? {
-            height: '425px',
+            height: '500px',
             bannerFile: 'banner-sm',
             actionBoxPosition: {
               padding: '30px',
