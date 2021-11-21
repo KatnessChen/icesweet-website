@@ -3,7 +3,7 @@
     class="section-swiper"
     :style="styleInfo"
   >
-    <my-swiper :banner-paths="banners" />
+    <my-swiper />
   </section>
 </template>
 
@@ -26,19 +26,6 @@ export default {
   },
   computed: {
     ...mapGetters(['isMobile']),
-    banners () {
-      return this.isMobile
-        ? [
-            'image-sm-2.webp',
-            'image-sm-3.webp',
-            'image-sm-1.webp'
-          ]
-        : [
-            'image-2.webp',
-            'image-3.webp',
-            'image-1.webp'
-          ]
-    },
     styleInfo () {
       return this.isMobile
         ? { height: '115vw' }
