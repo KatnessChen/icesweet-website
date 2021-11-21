@@ -19,8 +19,8 @@ export default {
   }),
   mounted () {
     this.observer = new IntersectionObserver(([entry]) => {
-      if (entry && entry.isIntersecting) {
-        this.$emit('intersect')
+      if (entry) {
+        this.$emit(entry.isIntersecting ? 'intersect' : 'hidden')
       }
     }, this.options)
 

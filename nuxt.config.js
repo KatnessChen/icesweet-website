@@ -66,5 +66,13 @@ export default {
   generate: {
     // https://nuxtjs.org/deployments/netlify#deploy-nuxt-on-netlify
     fallback: true
+  },
+  scrollBehavior: (_x, _y, savedPosition) => {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
   }
+
 }

@@ -5,6 +5,7 @@
   >
     <back
       v-if="isTabletOrAbove"
+      :back-callback="backHandler"
       class="mb-2"
     />
     <card
@@ -17,7 +18,7 @@
       v-if="isMobile"
       class="mt-2 flex justify-center"
     >
-      <back />
+      <back :back-callback="backHandler" />
     </div>
   </div>
 </template>
@@ -50,6 +51,11 @@ export default Vue.extend({
   },
   computed: {
     ...mapGetters(['isTabletOrAbove', 'isMobile'])
+  },
+  methods: {
+    backHandler () {
+      this.$router.back()
+    }
   }
 })
 </script>

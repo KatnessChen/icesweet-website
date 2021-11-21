@@ -1,23 +1,37 @@
 <template>
   <div
     class="back flex items-center cursor-pointer"
-    @click="$router.push({ name: 'index' })"
+    @click="backCallback"
   >
     <img
       :src="require('/static/image/arrow.png')"
       class="back-img mr-1"
       width="24"
       height="24"
-      alt="返回首頁"
+      :alt="backLabel"
     >
     <span>
-      回首頁
+      {{ backLabel }}
     </span>
   </div>
 </template>
 
 <script>
-export default {}
+
+export default {
+  name: 'Back',
+  props: {
+    backLabel: {
+      type: String,
+      default: '回首頁'
+    },
+    backCallback: {
+      type: Function,
+      default: () => {},
+      required: true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
