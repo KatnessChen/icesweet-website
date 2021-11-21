@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 .section-video {
-  height: 60vh;
+  height: 576px;
 
   .iframe {
     width: 100%;

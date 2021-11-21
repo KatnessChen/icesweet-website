@@ -68,7 +68,7 @@ export default {
     styleInfo () {
       return this.deviceWidth < 560
         ? {
-            height: '100vh',
+            height: '425px',
             bannerFile: 'banner-sm',
             actionBoxPosition: {
               padding: '30px',
@@ -78,7 +78,7 @@ export default {
             }
           }
         : {
-            height: '80vh',
+            height: '550px',
             bannerFile: 'banner',
             actionBoxPosition: {
               padding: '62px 54px 71px 55px',
