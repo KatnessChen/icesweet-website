@@ -8,28 +8,32 @@
     >
       <nuxt-link
         v-for="feature in features"
+        v-slot="{ navigate }"
         :key="feature.routeName"
+        custom
         :to="{ name: feature.routeName }"
         class="menu-item flex flex-col items-center"
         tag="li"
       >
-        <img
-          :src="require(`/static/svg/${feature.icon}.svg`)"
-          class="feature-icon"
-          :alt="`查看${feature.label}頁面`"
-          width="66"
-          height="66"
-        >
-        <span class="mt-2 whitespace-nowrap flex">
-          {{ feature.label }}
+        <li role="link" class="cursor-pointer" @click="navigate" @keypress.enter="navigate">
           <img
-            :src="require('/static/image/chevron-pink.svg')"
-            class="ml-1"
+            :src="require(`/static/svg/${feature.icon}.svg`)"
+            class="feature-icon"
             :alt="`查看${feature.label}頁面`"
-            width="18"
-            height="18"
+            width="66"
+            height="66"
           >
-        </span>
+          <span class="mt-2 whitespace-nowrap flex">
+            {{ feature.label }}
+            <img
+              :src="require('/static/image/chevron-pink.svg')"
+              class="ml-1"
+              :alt="`查看${feature.label}頁面`"
+              width="18"
+              height="18"
+            >
+          </span>
+        </li>
       </nuxt-link>
     </ul>
   </div>
