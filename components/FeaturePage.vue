@@ -1,7 +1,7 @@
 <template>
   <div
     class="container m-auto"
-    :style="{ padding: isTabletOrAbove ? '40px' : '20px' }"
+    :style="{ padding: isTabletOrAbove ? '40px' : '16px' }"
   >
     <back
       v-if="isTabletOrAbove"
