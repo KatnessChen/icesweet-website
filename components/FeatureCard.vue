@@ -88,7 +88,6 @@ export default {
   border-radius: 10px;
   box-shadow: 0 4px 20px 0 #e5e5e5;
   height: calc(100vh - #{$app-header-height + $app-footer-height + 76px});
-  overflow: auto;
 
   .shadow {
     opacity: 1;
@@ -99,7 +98,8 @@ export default {
     right: 0;
     width: 100%;
     height: 10%;
-    background: linear-gradient(to bottom, transparent, #eee);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #eee);
+    border-radius: 0 0 15px 15px;
   }
 
   &.hide-shadow {
