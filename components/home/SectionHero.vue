@@ -92,7 +92,8 @@ export default {
   },
   methods: {
     onClickRegister () {
-      const inviteCode = localStorage.getItem('invite')
+      const searchParams = new URLSearchParams(window.location.search)
+      const inviteCode = searchParams.get('invite')
 
       if (inviteCode) {
         window.open(this.platformUrl + `?invite=${inviteCode}`)
