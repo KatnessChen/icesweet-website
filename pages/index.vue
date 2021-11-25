@@ -12,7 +12,7 @@
       :options="observerOptions"
       @intersect="intersect"
     />
-    <template v-if="loadRestPage">
+    <template v-if="loadRestPage || !firstVisit">
       <!-- 平台操作介面 -->
       <section-interface-intro />
       <!-- 影音區 -->
@@ -63,7 +63,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['url', 'brandName']),
+    ...mapState(['url', 'brandName', 'firstVisit']),
     observerOptions () {
       return {
         // options.root parameter cannot be a Document under Safari on iOS 12.2
@@ -81,7 +81,10 @@ export default {
   },
   methods: {
     intersect () {
+      if (!this.firstVisit) { return }
+
       this.loadRestPage = true
+      this.$store.commit('visited')
     }
   }
 }

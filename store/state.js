@@ -4,6 +4,7 @@ export default () => ({
     sm: 576,
     lg: 992
   },
+  firstVisit: true,
   brandName: '冰山撞甜心 - IceSweet',
   url: {
     platformProdEnvUrl: 'https://platform.icesweet.com.tw/',
