@@ -66,7 +66,8 @@ export default {
     ...mapState(['url', 'brandName']),
     observerOptions () {
       return {
-        root: this.$refs.observedObject,
+        // options.root parameter cannot be a Document under Safari on iOS 12.2
+        root: typeof window !== 'undefined' ? window.document.getElementsByClassName('home-page')[0] : null,
         rootMargin: '0px',
         threshold: 0
       }
