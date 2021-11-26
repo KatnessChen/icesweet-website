@@ -97,7 +97,7 @@ export default {
     left: 0;
     right: 0;
     width: 100%;
-    height: 10%;
+    height: 11%; // greater than 10% to avoid gap
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #eee);
     border-radius: 0 0 15px 15px;
   }
