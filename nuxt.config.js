@@ -54,7 +54,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-KWRFJL2', pageTracking: true }]
   ],
   sitemap: {
     hostname: 'https://www.icesweet.com.tw/',
