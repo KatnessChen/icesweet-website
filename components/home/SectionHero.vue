@@ -64,7 +64,7 @@ export default {
   name: 'SectionHero',
   computed: {
     ...mapState(['deviceWidth']),
-    ...mapGetters(['isMobile', 'platformUrl']),
+    ...mapGetters(['isMobile']),
     styleInfo () {
       return this.deviceWidth < 560
         ? {
@@ -95,10 +95,11 @@ export default {
       const searchParams = new URLSearchParams(window.location.search)
       const inviteCode = searchParams.get('invite')
 
+      console.log(process.env.NUXT_ENV_PLATFORM_URL)
       if (inviteCode) {
-        window.open(this.platformUrl + `?invite=${inviteCode}`)
+        window.open(process.env.NUXT_ENV_PLATFORM_URL + `?invite=${inviteCode}`)
       } else {
-        window.open(this.platformUrl)
+        window.open(process.env.NUXT_ENV_PLATFORM_URL)
       }
     },
     onClickJoin () {

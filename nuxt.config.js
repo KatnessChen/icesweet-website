@@ -55,7 +55,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/sitemap',
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-KWRFJL2', pageTracking: true }]
+    ['@nuxtjs/google-tag-manager', { id: process.env.NUXT_ENV_GTM_ID, pageTracking: true }]
   ],
   sitemap: {
     hostname: 'https://www.icesweet.com.tw/',
@@ -65,6 +65,13 @@ export default {
       priority: 1
     }
   },
+  env: process.env.NODE_ENV === 'dev'
+    ? {
+        NUXT_ENV_PLATFORM_URL: 'https://www.icebaby.ml/'
+      }
+    : {
+        NUXT_ENV_PLATFORM_URL: 'https://platform.icesweet.com.tw/'
+      },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

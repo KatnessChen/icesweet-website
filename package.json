@@ -6,7 +6,8 @@
     "serve": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate:prod": "NODE_ENV=prod NUXT_ENV_GTM_ID=GTM-5S6745B nuxt generate",
+    "generate:dev": "NODE_ENV=dev NUXT_ENV_GTM_ID=GTM-KWRFJL2 nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style"
